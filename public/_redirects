@@ -1,0 +1,6 @@
+# Redirections pour Label Conseil
+# Toutes les routes vers la fonction SSR
+/*    /.netlify/functions/ssr   200
+
+# Gestion des erreurs 404
+/*    /index.html   404

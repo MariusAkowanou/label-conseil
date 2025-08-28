@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@fontsource/poppins/300.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+/* Classes utilitaires personnalisées pour les animations au scroll */
+@layer utilities {
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .animate-on-scroll.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .animate-on-scroll-delay-100 {
+    transition-delay: 100ms;
+  }
+  
+  .animate-on-scroll-delay-200 {
+    transition-delay: 200ms;
+  }
+  
+  .animate-on-scroll-delay-300 {
+    transition-delay: 300ms;
+  }
+}
+
+/* Styles globaux */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans;
+  }
+}
+
+ /* Titres avec Poppins */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading; /* Poppins pour les titres */
+  }
+  
+ 

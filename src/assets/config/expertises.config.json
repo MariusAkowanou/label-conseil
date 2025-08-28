@@ -1,0 +1,591 @@
+{
+  "expertises": [
+    {
+      "id": "carriere",
+      "slug": "carriere",
+      "name": "Label Conseil Carrière",
+      "tagline": "Votre spécialiste des profils issus du monde du conseil et de l'accompagnement",
+      "heroImage": "/assets/images/hero.png",
+      "description": "Première activité développée par le cabinet, Label Conseil Carrière accompagne les cabinets de conseil et les entreprises dans le recrutement de profils issus du monde du conseil et de l'accompagnement.",
+      "detailedDescription": "Les consultants en recrutement spécialisés de Label Conseil Carrière réalisent plus de 150 recrutements par an en accompagnant tous les types d'interlocuteurs : cabinets de conseil, startups, ETI et entreprises du CAC 40.",
+      "marketContext": {
+        "title": "Un marché en mouvement perpétuel",
+        "content": "Les cabinets de conseil sont passés maîtres dans le fait d'anticiper les tendances et d'adapter leurs offres pour être au plus proche des besoins de leurs clients. Les cabinets spécialisent de plus en plus leurs consultants pour rester en amont des tendances et se différencier sur un marché fortement concurrentiel."
+      },
+      "recruitment": {
+        "title": "Label Conseil Carrière recrute :",
+        "categories": [
+          {
+            "title": "En directions corporate :",
+            "positions": [
+              "Direction Stratégique",
+              "Direction de l'Organisation / Direction de la Transformation",
+              "Équipe de Conseil Interne",
+              "Chargés de missions / COO / Chief of Staff",
+              "Chefs de projet IT"
+            ]
+          },
+          {
+            "title": "En cabinets de conseil :",
+            "positions": [
+              "Conseil en stratégie / de direction générale",
+              "Conseil en organisation / transformation / management",
+              "Conseil Sectoriel : industrie, bancassurance, secteur public",
+              "Conseil Fonctionnel : digital, finance, RH"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "150+",
+        "clientTypes": "Cabinets conseil, startups, ETI, CAC 40"
+      }
+    },
+    {
+      "id": "consulting",
+      "slug": "consulting",
+      "name": "Label Conseil Consulting",
+      "tagline": "Votre expert des métiers de la stratégie et de l'innovation",
+      "heroImage": "/assets/images/hero.png",
+      "description": "Label Conseil Consulting accompagne les entreprises dans le recrutement de profils stratégiques issus du monde du consulting et de l'innovation d'entreprise.",
+      "detailedDescription": "Nos consultants spécialisés maîtrisent les codes du conseil en stratégie et accompagnent les entreprises dans leurs recrutements de profils senior et dirigeants pour piloter leur transformation stratégique.",
+      "marketContext": {
+        "title": "L'innovation au cœur de la transformation",
+        "content": "Dans un contexte de transformation digitale accélérée, les entreprises recherchent des profils capables d'anticiper les mutations sectorielles et de piloter les projets d'innovation stratégique avec agilité et vision long terme."
+      },
+      "recruitment": {
+        "title": "Label Conseil Consulting recrute :",
+        "categories": [
+          {
+            "title": "En directions stratégiques :",
+            "positions": [
+              "Directeur Stratégie",
+              "Directeur Innovation",
+              "Directeur Transformation",
+              "Chief Strategy Officer",
+              "Head of Corporate Development"
+            ]
+          },
+          {
+            "title": "En innovation :",
+            "positions": [
+              "Innovation Manager",
+              "Chief Innovation Officer",
+              "Directeur R&D",
+              "Head of New Business Development",
+              "Responsable Stratégie Produit"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "100+",
+        "clientTypes": "Grands groupes, ETI, scale-ups"
+      }
+    },
+    {
+      "id": "digital",
+      "slug": "digital",
+      "name": "Label Conseil Digital",
+      "tagline": "Votre partenaire pour les métiers du digital et de la transformation",
+      "heroImage": "/assets/images/hero.png",
+      "description": "Label Conseil Digital accompagne les entreprises dans leurs recrutements de profils digital, hors profils techniques, pour piloter leur transformation numérique.",
+      "detailedDescription": "Nos experts du digital comprennent les enjeux de la transformation numérique et identifient les talents capables d'accompagner les entreprises dans leur évolution digitale et leur croissance en ligne.",
+      "marketContext": {
+        "title": "La révolution digitale en marche",
+        "content": "Les entreprises accélèrent leur transformation digitale et recherchent des profils expérimentés pour piloter leurs projets numériques, développer leur présence en ligne et optimiser l'expérience client dans un monde de plus en plus connecté."
+      },
+      "recruitment": {
+        "title": "Label Conseil Digital recrute :",
+        "categories": [
+          {
+            "title": "En transformation digitale :",
+            "positions": [
+              "Chief Digital Officer",
+              "Directeur Transformation Digitale",
+              "Digital Transformation Manager",
+              "Head of Digital",
+              "Responsable Innovation Digitale"
+            ]
+          },
+          {
+            "title": "En marketing digital :",
+            "positions": [
+              "Directeur Marketing Digital",
+              "Head of Growth",
+              "Responsable E-commerce",
+              "Digital Marketing Manager",
+              "Customer Experience Manager"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "80+",
+        "clientTypes": "Scale-ups, ETI, grands groupes"
+      }
+    },
+    {
+      "id": "strategies-territoires",
+      "slug": "strategies-territoires",
+      "name": "Stratégies de Territoires",
+      "tagline": "Expertise en développement territorial et concertation multi-acteurs",
+      "heroImage": "/assets/images/expertises/territoires-hero.jpg",
+      "description": "Accompagnement spécialisé des collectivités et organisations dans l'élaboration et la mise en œuvre de stratégies territoriales durables.",
+      "detailedDescription": "Notre équipe d'experts intervient auprès des collectivités locales, des établissements publics et des organisations territoriales pour concevoir et déployer des stratégies de développement adaptées aux enjeux locaux.",
+      "marketContext": {
+        "title": "Les territoires face aux défis contemporains",
+        "content": "Dans un contexte de décentralisation et de mutations socio-économiques, les territoires doivent repenser leur modèle de développement en intégrant les enjeux environnementaux, sociaux et économiques dans une approche collaborative et participative."
+      },
+      "recruitment": {
+        "title": "Stratégies de Territoires recrute :",
+        "categories": [
+          {
+            "title": "En développement territorial :",
+            "positions": [
+              "Directeur de projet territorial",
+              "Chargé de mission développement local",
+              "Consultant en stratégie territoriale",
+              "Responsable concertation",
+              "Animateur de réseaux territoriaux"
+            ]
+          },
+          {
+            "title": "En accompagnement institutionnel :",
+            "positions": [
+              "Consultant collectivités",
+              "Expert en gouvernance locale",
+              "Facilitateur groupes de travail",
+              "Coordinateur projets multi-acteurs",
+              "Spécialiste participation citoyenne"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "45+",
+        "clientTypes": "Collectivités, établissements publics, associations"
+      }
+    },
+    {
+      "id": "services-economiques-financiers",
+      "slug": "services-economiques-financiers",
+      "name": "Services Économiques et Financiers",
+      "tagline": "Expertise complète en gestion financière et développement économique",
+      "heroImage": "/assets/images/expertises/economie-hero.jpg",
+      "description": "Accompagnement global des entreprises dans leur développement économique, de la création à la restructuration, en passant par la recherche de financement.",
+      "detailedDescription": "Nos consultants financiers et économistes accompagnent les entreprises à tous les stades de leur développement, depuis l'étude de faisabilité jusqu'à la restructuration, en passant par l'optimisation de la gestion financière.",
+      "marketContext": {
+        "title": "Un environnement économique en mutation",
+        "content": "Face aux défis économiques contemporains et aux évolutions réglementaires, les entreprises ont besoin d'experts capables de les accompagner dans leurs décisions stratégiques et leur optimisation financière."
+      },
+      "recruitment": {
+        "title": "Services Économiques et Financiers recrute :",
+        "categories": [
+          {
+            "title": "En conseil financier :",
+            "positions": [
+              "Consultant en création d'entreprise",
+              "Expert en évaluation d'entreprise",
+              "Spécialiste restructuration",
+              "Conseiller en recherche de financement",
+              "Analyste projets économiques"
+            ]
+          },
+          {
+            "title": "En gestion d'entreprise :",
+            "positions": [
+              "Directeur administratif et financier",
+              "Contrôleur de gestion",
+              "Responsable études économiques",
+              "Consultant en optimisation financière",
+              "Expert en redressement d'entreprise"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "65+",
+        "clientTypes": "PME, ETI, entrepreneurs, investisseurs"
+      }
+    },
+    {
+      "id": "productivite-humaine",
+      "slug": "productivite-humaine",
+      "name": "Gestion de la Productivité Humaine",
+      "tagline": "Excellence en gestion des ressources humaines et développement organisationnel",
+      "heroImage": "/assets/images/expertises/rh-hero.jpg",
+      "description": "Expertise complète en gestion des ressources humaines, du recrutement au développement des compétences, en passant par l'optimisation organisationnelle.",
+      "detailedDescription": "Notre équipe RH accompagne les entreprises dans toutes les dimensions de la gestion humaine : recrutement, formation, évaluation, rémunération et gestion stratégique des talents.",
+      "marketContext": {
+        "title": "Le capital humain au cœur de la performance",
+        "content": "Dans un marché du travail en pleine transformation, les entreprises doivent repenser leur approche RH pour attirer, développer et fidéliser les talents tout en optimisant leur organisation interne."
+      },
+      "recruitment": {
+        "title": "Gestion de la Productivité Humaine recrute :",
+        "categories": [
+          {
+            "title": "En direction RH :",
+            "positions": [
+              "Directeur des Ressources Humaines",
+              "DRH adjoint",
+              "Responsable développement RH",
+              "HRBP (Human Resources Business Partner)",
+              "Directeur des talents"
+            ]
+          },
+          {
+            "title": "En expertise RH :",
+            "positions": [
+              "Responsable recrutement",
+              "Consultant en formation",
+              "Spécialiste rémunération",
+              "Expert en évaluation",
+              "Consultant mobilité interne"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "90+",
+        "clientTypes": "Tous secteurs, PME à grands groupes"
+      }
+    },
+    {
+      "id": "conseil-juridique",
+      "slug": "conseil-juridique",
+      "name": "Conseil Juridique",
+      "tagline": "Expertise juridique complète pour entreprises et particuliers",
+      "heroImage": "/assets/images/expertises/juridique-hero.jpg",
+      "description": "Accompagnement juridique complet des entreprises et particuliers, de la consultation à l'assistance dans les procédures complexes.",
+      "detailedDescription": "Notre équipe d'experts juridiques intervient dans tous les domaines du droit des affaires : création d'entreprise, contrats, liquidation, recouvrement et conseil en assurance.",
+      "marketContext": {
+        "title": "Un environnement juridique complexe",
+        "content": "L'évolution constante du cadre réglementaire et la complexification des relations d'affaires nécessitent un accompagnement juridique expert pour sécuriser les opérations et anticiper les risques."
+      },
+      "recruitment": {
+        "title": "Conseil Juridique recrute :",
+        "categories": [
+          {
+            "title": "En droit des affaires :",
+            "positions": [
+              "Avocat droit des sociétés",
+              "Juriste d'entreprise",
+              "Consultant en création d'entreprise",
+              "Expert en droit commercial",
+              "Spécialiste procédures collectives"
+            ]
+          },
+          {
+            "title": "En conseil spécialisé :",
+            "positions": [
+              "Conseiller en recouvrement",
+              "Expert en droit des assurances",
+              "Consultant succession",
+              "Juriste contrats",
+              "Spécialiste propriété intellectuelle"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "55+",
+        "clientTypes": "Entreprises, particuliers, professions libérales"
+      }
+    },
+    {
+      "id": "expertise-rurale",
+      "slug": "expertise-rurale",
+      "name": "Expertise Rurale",
+      "tagline": "Spécialisation en développement rural et économie villageoise",
+      "heroImage": "/assets/images/expertises/rural-hero.jpg",
+      "description": "Expertise dédiée au développement rural, à l'animation de projets villageois et à l'organisation du milieu rural dans une approche participative.",
+      "detailedDescription": "Nos experts ruraux accompagnent les communautés villageoises, les ONG et les collectivités dans le développement de projets ruraux durables, l'organisation de groupements et la structuration du milieu rural.",
+      "marketContext": {
+        "title": "Les défis du développement rural",
+        "content": "Le développement rural nécessite une approche spécialisée intégrant les dimensions socio-économiques, environnementales et participatives pour accompagner les communautés dans leur transformation durable."
+      },
+      "recruitment": {
+        "title": "Expertise Rurale recrute :",
+        "categories": [
+          {
+            "title": "En développement rural :",
+            "positions": [
+              "Expert en socio-économie rurale",
+              "Animateur de projets villageois",
+              "Spécialiste groupements ruraux",
+              "Consultant en économie rurale",
+              "Expert en microfinance rurale"
+            ]
+          },
+          {
+            "title": "En organisation rurale :",
+            "positions": [
+              "Facilitateur de groupements",
+              "Expert en tenure foncière",
+              "Spécialiste ressources villageoises",
+              "Consultant structuration rurale",
+              "Animateur approche participative"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "35+",
+        "clientTypes": "ONG, collectivités, organisations rurales"
+      }
+    },
+    {
+      "id": "etudes-sectorielles",
+      "slug": "etudes-sectorielles",
+      "name": "Études Sectorielles",
+      "tagline": "Analyses approfondies des filières économiques et bassins régionaux",
+      "heroImage": "/assets/images/expertises/etudes-hero.jpg",
+      "description": "Réalisation d'études sectorielles approfondies, d'analyses de filières économiques et de monographies régionales pour éclairer les décisions stratégiques.",
+      "detailedDescription": "Notre équipe d'analystes sectoriels produit des études de marché, des analyses de filières et des diagnostics territoriaux pour accompagner les décideurs dans leur compréhension des enjeux économiques.",
+      "marketContext": {
+        "title": "L'importance de l'intelligence économique",
+        "content": "Dans un environnement économique complexe et en mutation, les entreprises et institutions ont besoin d'analyses sectorielles fiables pour orienter leurs stratégies et investissements."
+      },
+      "recruitment": {
+        "title": "Études Sectorielles recrute :",
+        "categories": [
+          {
+            "title": "En analyse économique :",
+            "positions": [
+              "Économiste sectoriel",
+              "Analyste de filières",
+              "Expert en monographies régionales",
+              "Consultant études de marché",
+              "Spécialiste intelligence économique"
+            ]
+          },
+          {
+            "title": "En recherche appliquée :",
+            "positions": [
+              "Chargé d'études économiques",
+              "Analyste environnement industriel",
+              "Expert bassins régionaux",
+              "Consultant diagnostic territorial",
+              "Spécialiste veille sectorielle"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "40+",
+        "clientTypes": "Institutions, entreprises, collectivités"
+      }
+    },
+    {
+      "id": "expertise-sociale",
+      "slug": "expertise-sociale",
+      "name": "Expertise Sociale",
+      "tagline": "Spécialisation en politiques sociales et approches participatives",
+      "heroImage": "/assets/images/expertises/social-hero.jpg",
+      "description": "Expertise en études sociales, politiques de l'emploi et approches participatives avec une attention particulière aux enjeux de genre et de développement.",
+      "detailedDescription": "Nos experts sociaux conduisent des études sur l'emploi, la pauvreté et les inégalités, tout en développant des approches participatives et des politiques sociales inclusives.",
+      "marketContext": {
+        "title": "Les enjeux sociaux contemporains",
+        "content": "Face aux mutations sociales et aux défis de l'inclusion, les organisations ont besoin d'expertise pour développer des politiques sociales efficaces et des approches participatives adaptées."
+      },
+      "recruitment": {
+        "title": "Expertise Sociale recrute :",
+        "categories": [
+          {
+            "title": "En études sociales :",
+            "positions": [
+              "Sociologue de l'emploi",
+              "Expert politiques sociales",
+              "Spécialiste étude de pauvreté",
+              "Consultant approche genre",
+              "Analyste statistiques sociales"
+            ]
+          },
+          {
+            "title": "En développement social :",
+            "positions": [
+              "Facilitateur approche participative",
+              "Expert genre et développement",
+              "Consultant politiques emploi",
+              "Spécialiste inclusion sociale",
+              "Animateur développement communautaire"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "30+",
+        "clientTypes": "ONG, institutions publiques, bailleurs"
+      }
+    },
+    {
+      "id": "strategies-entreprise",
+      "slug": "strategies-entreprise",
+      "name": "Stratégies d'Entreprise",
+      "tagline": "Excellence en stratégie et management d'entreprise",
+      "heroImage": "/assets/images/expertises/strategie-hero.jpg",
+      "description": "Accompagnement stratégique complet des entreprises : stratégie marketing, organisationnelle, financière et planification stratégique.",
+      "detailedDescription": "Notre équipe de consultants en stratégie accompagne les dirigeants dans l'élaboration et la mise en œuvre de leurs stratégies d'entreprise, du diagnostic à l'implémentation.",
+      "marketContext": {
+        "title": "La stratégie au cœur de la performance",
+        "content": "Dans un environnement concurrentiel exigeant, les entreprises doivent développer des stratégies différenciantes et adaptées pour assurer leur croissance et leur pérennité."
+      },
+      "recruitment": {
+        "title": "Stratégies d'Entreprise recrute :",
+        "categories": [
+          {
+            "title": "En conseil stratégique :",
+            "positions": [
+              "Consultant en stratégie d'entreprise",
+              "Expert en planification stratégique",
+              "Spécialiste diagnostic d'entreprise",
+              "Consultant en management stratégique",
+              "Directeur de la stratégie"
+            ]
+          },
+          {
+            "title": "En stratégies fonctionnelles :",
+            "positions": [
+              "Consultant stratégie marketing",
+              "Expert stratégie organisationnelle",
+              "Spécialiste stratégie financière",
+              "Consultant transformation",
+              "Responsable développement stratégique"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "70+",
+        "clientTypes": "PME, ETI, grands groupes"
+      }
+    },
+    {
+      "id": "service-marketing",
+      "slug": "service-marketing",
+      "name": "Service Marketing",
+      "tagline": "Expertise marketing complète de l'étude à la mise en marché",
+      "heroImage": "/assets/images/expertises/marketing-hero.jpg",
+      "description": "Services marketing complets : études de marché, communication, distribution et développement commercial pour optimiser votre présence marché.",
+      "detailedDescription": "Notre équipe marketing accompagne les entreprises dans toutes les dimensions du marketing : étude de marché, stratégie de communication, développement des réseaux de distribution et optimisation des services clients.",
+      "marketContext": {
+        "title": "Le marketing à l'ère digitale",
+        "content": "Les entreprises doivent adapter leur approche marketing aux nouveaux comportements des consommateurs et aux opportunités offertes par les technologies digitales pour maximiser leur impact."
+      },
+      "recruitment": {
+        "title": "Service Marketing recrute :",
+        "categories": [
+          {
+            "title": "En stratégie marketing :",
+            "positions": [
+              "Directeur marketing",
+              "Chef de produit marketing",
+              "Responsable études de marché",
+              "Consultant en stratégie marketing",
+              "Expert en positionnement"
+            ]
+          },
+          {
+            "title": "En opérationnel marketing :",
+            "positions": [
+              "Responsable communication",
+              "Chef de projet marketing",
+              "Responsable réseau distribution",
+              "Expert service clientèle",
+              "Spécialiste marketing export"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "85+",
+        "clientTypes": "Tous secteurs, start-ups à multinationales"
+      }
+    },
+    {
+      "id": "assistance-gestion",
+      "slug": "assistance-gestion",
+      "name": "Assistance en Gestion",
+      "tagline": "Expertise comptable et financière pour optimiser votre gestion",
+      "heroImage": "/assets/images/expertises/gestion-hero.jpg",
+      "description": "Accompagnement complet en gestion comptable et financière : révision des comptes, organisation comptable et comptabilité de gestion.",
+      "detailedDescription": "Nos experts-comptables et conseillers en gestion accompagnent les entreprises dans l'optimisation de leur gestion comptable et financière, de l'organisation des processus à l'analyse des coûts.",
+      "marketContext": {
+        "title": "L'excellence en gestion comptable",
+        "content": "Une gestion comptable rigoureuse et des outils de contrôle adaptés sont essentiels pour la prise de décision et la performance financière des entreprises."
+      },
+      "recruitment": {
+        "title": "Assistance en Gestion recrute :",
+        "categories": [
+          {
+            "title": "En expertise comptable :",
+            "positions": [
+              "Expert-comptable",
+              "Réviseur légal",
+              "Responsable comptabilité",
+              "Consultant en organisation comptable",
+              "Spécialiste consolidation"
+            ]
+          },
+          {
+            "title": "En contrôle de gestion :",
+            "positions": [
+              "Contrôleur de gestion",
+              "Consultant comptabilité analytique",
+              "Expert en prix de revient",
+              "Responsable reporting financier",
+              "Analyste coûts et performance"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "60+",
+        "clientTypes": "PME, ETI, cabinets d'expertise"
+      }
+    },
+    {
+      "id": "gestion-systemes-information",
+      "slug": "gestion-systemes-information",
+      "name": "Gestion de l'Information et des Systèmes",
+      "tagline": "Excellence en systèmes d'information et transformation digitale",
+      "heroImage": "/assets/images/expertises/si-hero.jpg",
+      "description": "Expertise complète en systèmes d'information : conception, développement, sécurité et administration pour optimiser votre infrastructure IT.",
+      "detailedDescription": "Notre équipe d'experts IT accompagne les entreprises dans la conception, le développement et la gestion de leurs systèmes d'information avec une approche globale de la transformation digitale.",
+      "marketContext": {
+        "title": "La révolution des systèmes d'information",
+        "content": "Dans un monde de plus en plus connecté, les systèmes d'information sont devenus stratégiques pour la compétitivité des entreprises et nécessitent une expertise pointue."
+      },
+      "recruitment": {
+        "title": "Gestion de l'Information et des Systèmes recrute :",
+        "categories": [
+          {
+            "title": "En direction SI :",
+            "positions": [
+              "Directeur des systèmes d'information",
+              "Chef de projet SI",
+              "Architecte système d'information",
+              "Consultant transformation digitale",
+              "Responsable sécurité informatique"
+            ]
+          },
+          {
+            "title": "En expertise technique :",
+            "positions": [
+              "Administrateur base de données",
+              "Expert sélection logiciels",
+              "Consultant implantation SI",
+              "Spécialiste sécurité informatique",
+              "Formateur systèmes d'information"
+            ]
+          }
+        ]
+      },
+      "statistics": {
+        "recruitmentsPerYear": "95+",
+        "clientTypes": "Tous secteurs, PME à grands groupes"
+      }
+    }
+  ]
+}

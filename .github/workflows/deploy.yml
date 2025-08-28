@@ -1,0 +1,50 @@
+name: 🚀 Déploiement Netlify
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout du code
+      uses: actions/checkout@v4
+      
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        
+    - name: 📦 Installation des dépendances
+      run: npm ci
+      
+    - name: 🏗️ Build de production
+      run: npm run build:netlify
+      
+    - name: 🧪 Tests
+      run: npm test -- --watch=false --browsers=ChromeHeadless
+      
+    - name: 📁 Préparation des fichiers Netlify
+      run: |
+        mkdir -p netlify/functions
+        cp -r dist/label-conseil/browser/* netlify/functions/
+        
+    - name: 🚀 Déploiement sur Netlify
+      uses: nwtgck/actions-netlify@v2.0
+      with:
+        publish-dir: './dist/label-conseil/browser'
+        functions-dir: './netlify/functions'
+        edge-functions-dir: './netlify/edge-functions'
+        production-branch: main
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        deploy-message: "🚀 Déploiement automatique - ${{ github.sha }}"
+        
+    - name: 🔗 URL de déploiement
+      run: |
+        echo "🌐 Site déployé: ${{ steps.deploy.outputs.url }}"
+        echo "🔗 URL de preview: ${{ steps.deploy.outputs.deploy-url }}"
