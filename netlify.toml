@@ -1,7 +1,17 @@
 [build]
-  command = "npm ci && npm run build:netlify"
+  command = "npm run build:netlify"
   publish = "dist/label-conseil/browser"
   functions = "netlify/functions"
 
+
 [build.environment]
   NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+
+[[edge_functions]]
+  path = "/*"
+  function = "ssr"
