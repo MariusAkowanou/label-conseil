@@ -8,6 +8,7 @@
     "build:ssr": "ng build && ng build --configuration production --ssr",
     "build:netlify": "ng build --configuration production && ng build --configuration production --ssr",
     "build:static": "ng build --configuration production",
+    "build:netlify-safe": "npx ng build --configuration production && npx ng build --configuration production --ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:label-conseil": "node dist/label-conseil/server/server.mjs",
