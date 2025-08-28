@@ -1,0 +1,182 @@
+<div class="expertise-page">
+
+    <!-- Loading State -->
+    @if (isLoading()) {
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="text-center">
+            <i class="fas fa-spinner fa-spin text-4xl text-primary-600 mb-4"></i>
+            <p class="font-body text-gray-600">Chargement en cours...</p>
+        </div>
+    </div>
+    }
+
+    <!-- Not Found State -->
+    @if (notFound() && !isLoading()) {
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="text-center max-w-md mx-auto px-4">
+            <i class="fas fa-exclamation-triangle text-6xl text-gray-400 mb-6"></i>
+            <h1 class="font-heading text-2xl font-bold text-gray-900 mb-4">
+                Expertise non trouvée
+            </h1>
+            <p class="font-reading text-gray-600 mb-6">
+                L'expertise que vous recherchez n'existe pas ou a été déplacée.
+            </p>
+            <a routerLink="/expertises"
+                class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-300">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Retour aux expertises
+            </a>
+        </div>
+    </div>
+    }
+
+    <!-- Content -->
+    @if (expertise() && !isLoading()) {
+    <div>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+                    <!-- Image à gauche -->
+                    <div class="relative animate-on-scroll" data-section="hero">
+                        <div class="relative overflow-hidden rounded-2xl">
+                            <img [src]="expertise()!.heroImage" [alt]="expertise()!.name"
+                                class="w-full h-[500px] lg:h-[600px] object-cover">
+
+                            <!-- Overlay subtil -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent"></div>
+                        </div>
+                    </div>
+
+                    <!-- Contenu texte à droite -->
+                    <div class="space-y-8 animate-on-scroll animate-on-scroll-delay-200" data-section="hero">
+
+                        <!-- Surtitre et titre -->
+                        <div class="space-y-6">
+                            <span class="font-body text-sm font-semibold text-primary-600 uppercase tracking-wider">
+                                {{ expertise()!.tagline }}
+                            </span>
+
+                            <h1
+                                class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                                {{ expertise()!.name }}
+                            </h1>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="space-y-6">
+                            <p class="font-reading text-lg text-gray-700 leading-relaxed">
+                                {{ expertise()!.description }}
+                            </p>
+
+                            <p class="font-reading text-base text-gray-600 leading-relaxed">
+                                {{ expertise()!.detailedDescription }}
+                            </p>
+                        </div>
+
+                        <!-- Statistiques -->
+                        <div class="grid grid-cols-2 gap-6 pt-6 border-t border-gray-200">
+                            <div>
+                                <div class="font-heading text-2xl font-bold text-primary-600 mb-2">
+                                    {{ expertise()!.statistics.recruitmentsPerYear }}
+                                </div>
+                                <div class="font-body text-sm text-gray-600">
+                                    Recrutements par an
+                                </div>
+                            </div>
+                            <div>
+                                <div class="font-body text-xs text-gray-500 uppercase tracking-wide mb-2">
+                                    Clients type
+                                </div>
+                                <div class="font-reading text-sm text-gray-700">
+                                    {{ expertise()!.statistics.clientTypes }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Marché -->
+        <section class="py-20 lg:py-32 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-16 animate-on-scroll" data-section="market">
+                    <h2 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+                        {{ expertise()!.marketContext.title }}
+                    </h2>
+                </div>
+
+                <div class="animate-on-scroll animate-on-scroll-delay-200" data-section="market">
+                    <p class="font-reading text-lg text-gray-700 leading-relaxed text-center">
+                        {{ expertise()!.marketContext.content }}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Recrutement -->
+        <section class="py-20 lg:py-32 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-16 animate-on-scroll" data-section="recruitment">
+                    <h2 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900">
+                        {{ expertise()!.recruitment.title }}
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 justify-center">
+                    @for (category of expertise()!.recruitment.categories; track category.title; let i = $index) {
+                    <div class="space-y-6 animate-on-scroll" [class]="'animate-on-scroll-delay-' + ((i + 1) * 100)"
+                        data-section="recruitment">
+
+                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-6">
+                            {{ category.title }}
+                        </h3>
+
+                        <div class="space-y-3">
+                            @for (position of category.positions; track position) {
+                            <div class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
+                                <span class="font-reading text-gray-700">{{ position }}</span>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-Action -->
+        <section class="py-20 bg-gray-600 mb-5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="space-y-8 animate-on-scroll" data-section="cta">
+
+                    <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white">
+                        Intéressé par {{ expertise()!.name }} ?
+                    </h2>
+
+                    <p class="font-reading text-xl text-primary-100 max-w-2xl mx-auto">
+                        Prenons contact pour discuter de vos projets de recrutement dans ce domaine d'expertise.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a routerLink="/contact"
+                            class="font-heading inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-medium hover:shadow-strong">
+                            Nous contacter
+                        </a>
+
+                        <a routerLink="/expertises"
+                            class="font-heading inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-primary-600 transition-all duration-300">
+                            Toutes nos expertises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    }
+</div>

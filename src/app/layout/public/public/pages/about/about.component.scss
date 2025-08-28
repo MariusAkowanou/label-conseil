@@ -1,0 +1,21 @@
+/* Utilise les classes Tailwind existantes - pas besoin de CSS custom */
+
+/* Animation pour les cartes valeurs */
+.value-card:hover .value-icon {
+  transform: scale(1.1);
+}
+
+.value-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 1024px) {
+  .hero-section .grid > div:first-child {
+    order: 2;
+  }
+  
+  .hero-section .grid > div:last-child {
+    order: 1;
+  }
+}

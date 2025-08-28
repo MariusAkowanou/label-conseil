@@ -1,0 +1,211 @@
+<div class="home-page">
+
+    <!-- Section Hero -->
+    <section
+        class="hero-section relative min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-white to-primary-50/30 overflow-hidden">
+
+        <!-- Background decoration -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-primary-300 animate-float"></div>
+            <div class="absolute bottom-1/3 right-1/4 w-60 h-60 rounded-full bg-primary-200 animate-float"
+                style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:pb-24 lg:pt-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+                <!-- Contenu texte -->
+                <div class="space-y-6 animate-on-scroll" data-section="hero">
+
+                    <div class="space-y-3 ">
+                        <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                            {{ heroData.subtitle }} 
+                            <span class="text-primary-600 block ">{{ heroData.mainTitle }}</span>
+                        </h1>
+                        <div>
+                            <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg mb-4">
+                                {{ heroData.description }}
+                            </p>
+                            <p class="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
+                                {{ heroData.secondaryDescription }}
+                            </p>
+                            <p class="text-sm sm:text-base text-gray-700">
+                                Grâce à ses {{ heroData.stats.expertises }} expertises et un réseau de plus de
+                                <span class="text-primary-600 font-semibold">{{ heroData.stats.clients }} clients</span>,
+                                Label Conseil vous accompagne vers l'excellence.
+                            </p>
+
+                        </div>
+                       
+                    </div>
+
+
+                    <div class="flex flex-col sm:flex-row gap-3 pt-2 animate-on-scroll-delay-400">
+                        <a routerLink="/expertises"
+                            class="inline-flex items-center justify-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-all duration-300 shadow-medium hover:shadow-strong group text-sm sm:text-base">
+                            Découvrir nos expertises
+                            <i
+                                class="fas fa-arrow-right ml-2 text-sm transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+
+                        <a routerLink="/contact"
+                            class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:border-primary-600 hover:text-primary-600 transition-all duration-300 text-sm sm:text-base">
+                            Nous contacter
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image/Illustration -->
+                <div class="relative animate-on-scroll animate-on-scroll-delay-300">
+                    <div class="relative z-10 scale-in-bounce">
+                        <img src="assets/images/hero.png" alt="Hero" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Méthodologie -->
+    <section class="methodology-section py-16 lg:py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-on-scroll" data-section="methodology">
+                <h2 class="section-title text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    {{ methodologyData.title }}
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                @for (section of methodologyData.sections; track section.id; let i = $index) {
+                <div class="card-hover bg-gray-50 p-6 rounded-xl animate-on-scroll"
+                    [class]="'animate-on-scroll-delay-' + ((i + 1) * 100)" data-section="methodology">
+
+                    <div class="space-y-4">
+                        <span
+                            class="text-xs font-semibold text-primary-600 uppercase tracking-wider bg-primary-50 px-3 py-1 rounded-full">
+                            {{ section.title }}
+                        </span>
+
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900">
+                            {{ section.subtitle }}
+                        </h3>
+
+                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                            {{ section.description }}
+                        </p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Expertise -->
+    <section class="expertise-section py-16 lg:py-20 bg-gray-50">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+                <!-- Contenu texte -->
+                <div class="space-y-6 animate-on-scroll" data-section="expertise">
+
+                    <div class="space-y-4 font-reading">
+                        <h2 class="section-title text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">
+                            Notre secret ?
+                            <span class="text-primary-600">La maîtrise de vos métiers</span>
+                        </h2>
+
+                        <p class="text-base sm:text-lg text-gray-600 leading-relaxed">
+                            {{ expertiseData.description }}
+                        </p>
+
+                        <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                            {{ expertiseData.details }}
+                        </p>
+                    </div>
+
+                    <!-- Liste des expertises 
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 animate-on-scroll-delay-200">
+                        @for (expertise of expertiseData.expertises; track expertise; let i = $index) {
+                        <div
+                            class="text-xs sm:text-sm text-gray-600 font-medium py-2 px-3 bg-white rounded-lg border border-gray-200 text-center hover:border-primary-300 hover:text-primary-700 transition-all duration-300 card-hover">
+                            {{ expertise }}
+                        </div>
+                        }
+                    </div>-->
+                </div>
+
+                <!-- Illustration -->
+                <div class="relative animate-on-scroll animate-on-scroll-delay-300" data-section="expertise">
+                   <img src="assets/images/hero.png" alt="Expertise" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA -->
+    <section class="cta-section py-16 lg:py-20 bg-white">
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8 animate-on-scroll" data-section="cta">
+
+                <h2 class="section-title text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+                    {{ ctaData.title }}
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+                    @for (option of ctaData.options; track option.title; let i = $index) {
+                    <div class="text-center space-y-4 p-6 rounded-xl bg-gray-50 card-hover animate-on-scroll"
+                        [class]="'animate-on-scroll-delay-' + ((i + 2) * 100)">
+                        <h3 class="text-base sm:text-lg font-semibold text-gray-800">
+                            {{ option.title }}
+                        </h3>
+
+                        <a [routerLink]="option.route"
+                            class="inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-all duration-300 text-sm sm:text-base group"
+                            [class.bg-primary-600]="option.type === 'filled'"
+                            [class.text-white]="option.type === 'filled'"
+                            [class.hover:bg-primary-700]="option.type === 'filled'"
+                            [class.shadow-medium]="option.type === 'filled'" [class.border]="option.type === 'outline'"
+                            [class.border-gray-300]="option.type === 'outline'"
+                            [class.text-gray-700]="option.type === 'outline'"
+                            [class.hover:border-primary-600]="option.type === 'outline'"
+                            [class.hover:text-primary-600]="option.type === 'outline'">
+                            <i
+                                class="fas fa-chevron-right mr-2 text-xs transform group-hover:translate-x-1 transition-transform duration-300"></i>
+                            {{ option.buttonText }}
+                            <i
+                                class="fas fa-chevron-left ml-2 text-xs transform group-hover:-translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Partenaires -->
+    <section class="partners-section py-16 bg-gray-50">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-10 animate-on-scroll" data-section="partners">
+
+                <h2 class="section-title text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-600 mb-8">
+                    {{ partnersData.title }}
+                </h2>
+
+                <!-- Grille des logos partenaires -->
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 lg:gap-6 items-center">
+                    @for (partner of partnersData.partners; track partner.name; let i = $index) {
+                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-soft hover:shadow-medium transition-all duration-300 h-16 sm:h-18 partner-logo animate-on-scroll"
+                        [class]="'animate-on-scroll-delay-' + ((i % 6) * 50)">
+                        <img [src]="partner.logo" [alt]="partner.name" class="max-w-full max-h-full object-contain"
+                            loading="lazy">
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

@@ -1,0 +1,205 @@
+<div class="about-page bg-white">
+
+    <!-- Section Hero - Exactement comme l'image Upward -->
+    <section class="hero-section min-h-screen flex items-center">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+                <!-- Image à gauche -->
+                <div class="relative animate-on-scroll" data-section="hero">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <!-- Image d'équipe vue du dessus -->
+                        <img src="/assets/images/hero.png"
+                            alt="Équipe Label Conseil en réunion - vue aérienne"
+                            class="w-full h-[500px] lg:h-[600px] object-cover">
+
+                        <!-- Overlay subtil -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent"></div>
+                    </div>
+                </div>
+
+                <!-- Contenu texte à droite -->
+                <div class="space-y-8 animate-on-scroll animate-on-scroll-delay-200" data-section="hero">
+
+                    <!-- Surtitre rose -->
+                    <div class="space-y-6">
+                        <span class="font-body text-sm font-semibold text-primary-600 uppercase tracking-wider">
+                            {{ heroData.company }}
+                        </span>
+
+                        <!-- Titre principal -->
+                        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                            {{ heroData.title }}
+                        </h1>
+                    </div>
+
+                    <!-- Icône LinkedIn -->
+                    <div class="flex items-center">
+                        <a href="https://linkedin.com/company/label-conseil" target="_blank" rel="noopener noreferrer"
+                            class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition-all duration-300 shadow-medium hover:shadow-strong group">
+                            <i
+                                class="fab fa-linkedin-in text-white text-lg group-hover:scale-110 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+
+                    <!-- Description principale -->
+                    <div class="space-y-6">
+                        <p class="font-reading text-base text-gray-700 leading-relaxed">
+                            {{ heroData.mainDescription }}
+                        </p>
+
+                        <p class="font-reading text-base text-gray-600 leading-relaxed">
+                            {{ heroData.secondaryDescription }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Après la section hero, ajouter ces deux sections -->
+
+    <!-- Section Pourquoi Label Conseil -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+            <!-- Titre centré -->
+            <div class="text-start mb-8 animate-on-scroll" data-section="why">
+                <h2 class="font-reading text-xl lg:text-3xl font-bold text-gray-900">
+                    Pourquoi Label Conseil ?
+                </h2>
+            </div>
+    
+            <!-- Contenu -->
+            <div class="space-y-8 animate-on-scroll animate-on-scroll-delay-200" data-section="why">
+    
+                <!-- Introduction -->
+                <p class="font-reading text-lg text-gray-600 leading-relaxed">
+                    {{ whyData.introduction }}
+                </p>
+    
+                <!-- Singularité du cabinet -->
+                <div class="space-y-4">
+                    <p class="font-reading text-lg text-gray-700 leading-relaxed font-semibold">
+                        {{ whyData.singularityTitle }}
+                    </p>
+    
+                    <div class="space-y-6 ml-4">
+                        @for (point of whyData.points; track point.title) {
+                        <div class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
+                            <div>
+                                <span class="font-body font-semibold text-primary-600">{{ point.title }} :</span>
+                                <span class="font-reading text-gray-700 ml-1">
+                                    {{ point.description }}
+                                </span>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+    
+                <!-- Note sur le réseau -->
+                <p class="font-reading text-gray-700 leading-relaxed italic">
+                    {{ whyData.networkNote }}
+                </p>
+    
+                <!-- Statistiques -->
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-200">
+                    <div class="text-center">
+                        <div class="font-heading text-3xl font-bold text-primary-600 mb-2">16</div>
+                        <div class="font-body text-sm text-gray-600">Domaines d'expertise</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-heading text-3xl font-bold text-primary-600 mb-2">100+</div>
+                        <div class="font-body text-sm text-gray-600">Projets réalisés</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-heading text-3xl font-bold text-primary-600 mb-2">95%</div>
+                        <div class="font-body text-sm text-gray-600">Taux de satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section Raisons de nous choisir -->
+    <section class="py-20 lg:pb-32 lg:pt-12 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+            <!-- Titre -->
+            <div class="text-start mb-8 animate-on-scroll" data-section="reasons">
+                <h2 class="font-heading text-2xl lg:text-3xl font-bold text-primary-600 mb-4">
+                    {{ reasonsData.title }}
+                </h2>
+                <p class="font-reading text-lg text-gray-700 leading-relaxed mb-4">
+                    {{ reasonsData.subtitle }}
+                </p>
+                <p class="font-reading text-base text-gray-600 leading-relaxed">
+                    {{ reasonsData.intro }}
+                </p>
+            </div>
+    
+            <!-- Les trois approches -->
+            <div class="space-y-8 animate-on-scroll animate-on-scroll-delay-200" data-section="reasons">
+                @for (approach of reasonsData.approaches; track approach.title; let i = $index) {
+                <div class="flex items-start space-x-4">
+                    <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
+                    <div>
+                        <span class="font-body font-semibold text-primary-600">{{ approach.title }} :</span>
+                        <span class="font-reading text-gray-700 ml-1">
+                            {{ approach.description }}
+                        </span>
+                    </div>
+                </div>
+                }
+            </div>
+    
+            <!-- Nos engagements -->
+            <div class="mt-12 animate-on-scroll animate-on-scroll-delay-300" data-section="reasons">
+                <p class="font-reading text-gray-700 leading-relaxed mb-6 font-semibold">
+                    Car :
+                </p>
+                <div class="space-y-4">
+                    @for (commitment of reasonsData.commitments; track commitment) {
+                    <div class="flex items-start space-x-4">
+                        <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
+                        <span class="font-reading text-gray-700">{{ commitment }}</span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action -->
+    <section class="py-20 bg-gray-600">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8 animate-on-scroll" data-section="cta">
+
+                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white">
+                    Prêt à nous rejoindre dans cette aventure ?
+                </h2>
+
+                <p class="font-reading text-xl text-primary-100 max-w-2xl mx-auto">
+                    Découvrez comment Label Conseil peut vous accompagner vers vos objectifs les plus ambitieux.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a routerLink="/contact"
+                        class="font-heading inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-medium hover:shadow-strong">
+                        Contactez-nous
+                    </a>
+
+                    <a routerLink="/expertises"
+                        class="font-heading inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-primary-600 transition-all duration-300">
+                        Nos expertises
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

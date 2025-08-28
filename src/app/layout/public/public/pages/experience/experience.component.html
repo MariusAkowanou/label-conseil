@@ -1,0 +1,197 @@
+<div class="experience-page bg-white">
+
+    <!-- Section Hero -->
+    <section class="min-h-screen flex items-center bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+                <!-- Image à gauche -->
+                <div class="relative animate-on-scroll" data-section="hero">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="/assets/images/hero.png" alt="L'expérience Label Conseil"
+                            class="w-full h-[500px] lg:h-[600px] object-cover filter grayscale">
+
+                        <!-- Overlay subtil -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-black/10 to-transparent"></div>
+                    </div>
+                </div>
+
+                <!-- Contenu texte à droite -->
+                <div class="space-y-8 animate-on-scroll animate-on-scroll-delay-200" data-section="hero">
+
+                    <!-- Surtitre et titre -->
+                    <div class="space-y-6">
+                        <span class="font-body text-sm font-semibold text-primary-600 uppercase tracking-wider">
+                            {{ heroData.tagline }}
+                        </span>
+
+                        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                            {{ heroData.title }}
+                        </h1>
+                    </div>
+
+                    <!-- Icône LinkedIn -->
+                    <div class="flex items-center">
+                        <a href="https://linkedin.com/company/label-conseil" target="_blank" rel="noopener noreferrer"
+                            class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition-all duration-300 shadow-medium hover:shadow-strong group">
+                            <i
+                                class="fab fa-linkedin-in text-white text-lg group-hover:scale-110 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="space-y-6">
+                        <p class="font-reading text-base text-gray-700 leading-relaxed">
+                            {{ heroData.description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Process -->
+    <section class="py-20 lg:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Titre et introduction -->
+            <div class="text-center mb-20 animate-on-scroll" data-section="process">
+                <h2 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900 mb-8">
+                    {{ processData.title }}
+                </h2>
+                <p class="font-reading text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    {{ processData.subtitle }}
+                </p>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="space-y-32">
+                @for (phase of processData.phases; track phase.number; let i = $index) {
+                <div class="animate-on-scroll" [style.animation-delay]="(i * 200) + 'ms'" data-section="process">
+
+                    <!-- Phase avec icône centrée -->
+                    <div class="text-center mb-12">
+                        <!-- Ligne pointillée (sauf pour le dernier) -->
+                        @if (i < processData.phases.length - 1) { <div
+                            class="absolute left-1/2 transform -translate-x-1/2 mt-32 w-px h-24 bg-gradient-to-b from-gray-300 to-transparent opacity-50"
+                            style="background-image: repeating-linear-gradient(to bottom, #d1d5db 0px, #d1d5db 8px, transparent 8px, transparent 16px);">
+                    </div>
+                    }
+
+                    <!-- Icône dans cercle -->
+                    <div
+                        class="relative mx-auto w-24 h-24 bg-white rounded-full border-4 border-gray-200 flex items-center justify-center mb-8 shadow-soft">
+                        <i [class]="phase.icon" class="text-2xl text-gray-700"></i>
+                    </div>
+
+                    <!-- Numéro et titre -->
+                    <div class="mb-6">
+                        <span class="text-primary-600 font-body text-sm font-semibold">
+                            /{{ phase.number }}
+                        </span>
+                        <h3 class="font-heading text-2xl font-bold text-primary-600 mt-2">
+                            {{ phase.title }}
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="font-reading text-gray-700 leading-relaxed text-lg">
+                        {{ phase.description }}
+                    </p>
+
+                    @if (phase.continuationText) {
+                    <p class="font-reading text-gray-600 leading-relaxed mt-6">
+                        {{ phase.continuationText }}
+                    </p>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+</div>
+</section>
+
+<!-- Section Engagements Candidats -->
+<section class="py-20 lg:py-32 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Titre -->
+        <div class="text-center mb-16 animate-on-scroll" data-section="commitments">
+            <h2 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900">
+                {{ commitmentsData.title }}
+            </h2>
+        </div>
+
+        <!-- Grille des engagements -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            @for (commitment of commitmentsData.commitments; track commitment.title; let i = $index) {
+            <div class="bg-white rounded-2xl p-8 shadow-soft hover:shadow-medium transition-all duration-300 animate-on-scroll"
+                [style.animation-delay]="((i + 1) * 200) + 'ms'" data-section="commitments">
+
+                <h3 class="font-heading text-xl font-bold text-gray-900 mb-4">
+                    {{ commitment.title }}
+                </h3>
+
+                <p class="font-reading text-gray-600 leading-relaxed">
+                    {{ commitment.description }}
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Section Partenariat Durable -->
+<section class="py-20 lg:py-32 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="text-center space-y-8 animate-on-scroll" data-section="partnership">
+
+            <h2 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900">
+                {{ partnershipData.title }}
+            </h2>
+
+            <div class="space-y-6">
+                <p class="font-reading text-lg text-gray-700 leading-relaxed">
+                    {{ partnershipData.description }}
+                </p>
+
+                <p class="font-reading text-base text-gray-600 leading-relaxed">
+                    {{ partnershipData.commitment }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call-to-Action -->
+<section class="py-20 bg-primary-600">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="space-y-8 animate-on-scroll" data-section="cta">
+
+            <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white">
+                Prêt à vivre l'expérience Label Conseil ?
+            </h2>
+
+            <p class="font-reading text-xl text-primary-100 max-w-2xl mx-auto">
+                Découvrez notre approche personnalisée et notre engagement envers l'excellence.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a routerLink="/contact"
+                    class="font-heading inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-medium hover:shadow-strong">
+                    Nous contacter
+                </a>
+
+                <a routerLink="/expertises"
+                    class="font-heading inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-primary-600 transition-all duration-300">
+                    Nos expertises
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
