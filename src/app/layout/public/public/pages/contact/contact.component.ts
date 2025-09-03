@@ -1,18 +1,20 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SeoService } from '../../../../../shared/services/local/seo.service';
+import { ContactService, ContactData } from '../../../../../shared/services/api/contact.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit {
   private seo = inject(SeoService);
   private fb = inject(FormBuilder);
+  private contactService = inject(ContactService);
 
   activeForm = signal<'recruiter' | 'join' | 'evolve' | 'career'>('recruiter');
   isSubmitting = signal(false);
@@ -31,7 +33,7 @@ export class ContactComponent implements OnInit {
     'Stratégies de territoires',
     'Services économiques et financiers',
     'Gestion de la productivité humaine',
-    'Conseil juridique',
+    'Conseils juridique',
     'Expertise rurale',
     'Études sectorielles',
     'Expertise sociale',
@@ -39,7 +41,7 @@ export class ContactComponent implements OnInit {
     'Service marketing',
     'Assistance en gestion',
     'Gestion et développement des coopératives',
-    'Conseil en fiscalité',
+    'Conseils en fiscalité',
     'Gestion de l\'information et des systèmes',
     'Gestion des opérations et de la production'
   ];
@@ -49,7 +51,7 @@ export class ContactComponent implements OnInit {
     'Je cherche un coach pour un manager ou dirigeant de mon entreprise',
     'Je souhaite en savoir plus sur l\'accompagnement individuel',
     'Je cherche une solution d\'accompagnement collectif',
-    'Je souhaite un RDV découverte pour mieux comprendre l\'offre Label Conseil',
+    'Je souhaite un RDV découverte pour mieux comprendre l\'offre Label Conseils',
     'Autre (précisez ci-dessous)'
   ];
 
@@ -129,14 +131,27 @@ export class ContactComponent implements OnInit {
     }
 
     if (form.valid) {
-      // Simulation d'envoi
-      setTimeout(() => {
-        console.log(`Form ${formType} submitted:`, form.value);
-        this.isSubmitting.set(false);
-        // Ici, vous ajouteriez l'appel à votre service d'envoi d'email
-        alert('Formulaire envoyé avec succès !');
-        form.reset();
-      }, 2000);
+      // Préparer les données pour l'API
+      const formData = form.value;
+      const contactData: ContactData = {
+        ...formData,
+        contactType: formType as 'recruiter' | 'join' | 'evolve' | 'career'
+      };
+
+      // Envoyer les données via le service
+      this.contactService.submitInformationContact(contactData).subscribe({
+        next: (response) => {
+          console.log('Contact envoyé avec succès:', response);
+          this.isSubmitting.set(false);
+          alert('Formulaire envoyé avec succès !');
+          form.reset();
+        },
+        error: (error) => {
+          console.error('Erreur lors de l\'envoi:', error);
+          this.isSubmitting.set(false);
+          alert('Une erreur est survenue lors de l\'envoi du formulaire. Veuillez réessayer.');
+        }
+      });
     } else {
       this.isSubmitting.set(false);
       alert('Veuillez remplir tous les champs obligatoires.');

@@ -1,12 +1,12 @@
 import { Component, OnInit, inject, signal, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SeoService } from '../../../../../shared/services/local/seo.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     subtitle: "Votre expert du",
     mainTitle: "conseil et accompagnement",
     description: "Label Conseil est un cabinet de conseil spécialisé dans l'accompagnement des entreprises et des professionnels vers l'excellence.",
-    secondaryDescription: "Depuis plus de 10 ans, Label Conseil accompagne entreprises et candidats dans leur croissance et leur développement professionnel.",
+    secondaryDescription: "Depuis plus de 14 ans, Label Conseil accompagne entreprises et candidats dans leur croissance et leur développement professionnel.",
     stats: {
       experience: "10+",
       clients: "500+",

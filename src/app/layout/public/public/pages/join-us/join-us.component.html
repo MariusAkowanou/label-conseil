@@ -1,0 +1,57 @@
+@if (jobsConfig(); as config) {
+  <div class="join-us-page bg-white">
+    <!-- Section Hero avec statistiques -->
+    <section class="py-20 lg:py-32 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Contenu principal -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <!-- Colonne gauche -->
+          <div class="animate-on-scroll" data-section="hero">
+            <h1 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+              Qui sommes-nous ?
+            </h1>
+            <p class="font-body text-sm font-semibold text-primary-600 mb-4">
+              Ambition matters.
+            </p>
+            <div class="space-y-6">
+              <p class="font-reading text-gray-700 leading-relaxed">
+                {{ config.company.description }}
+              </p>
+              <p class="font-reading text-gray-700 leading-relaxed">
+                Chaque jour, Label Conseils relève le défi de rendre irréprochable l'expérience de conseils.
+                En rupture avec les acteurs traditionnels, Label Conseils propose une approche du conseils unique :
+                l'équilibre parfait entre excellence du service client, exemplarité de l'expérience candidats et
+                recherche permanente de l'épanouissement professionnel de nos collaboratrices et collaborateurs.
+              </p>
+              <p class="font-reading text-gray-700 leading-relaxed">
+                <strong>Notre ambition :</strong> devenir un des leaders du conseils dans le monde.<br>
+                Et si vous nous aidiez à relever le défi ?
+              </p>
+            </div>
+          </div>
+          <!-- Colonne droite - Statistiques -->
+          <app-company-stats [company]="config.company"></app-company-stats>
+        </div>
+      </div>
+    </section>
+    <!-- Section Nos Offres -->
+    <section class="py-20 lg:py-32 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Titre -->
+        <div class="mb-12 animate-on-scroll" data-section="jobs">
+          <h2 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Nos offres
+          </h2>
+        </div>
+        <!-- Filtres -->
+        <app-job-filters [availableCities]="availableCities" [availableContractTypes]="availableContractTypes"
+          (cityChanged)="onCityChanged($event)" (contractChanged)="onContractChanged($event)"
+          (searchChanged)="onSearchChanged($event)">
+        </app-job-filters>
+        <!-- Liste des offres -->
+        <app-job-list  [companyName]="config.company.name" (jobSelected)="onJobSelected($event)">
+        </app-job-list>
+      </div>
+    </section>
+  </div>
+}

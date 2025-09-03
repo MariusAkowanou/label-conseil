@@ -1,11 +1,11 @@
 import { Component, signal, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-cookie-banner',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './cookie-banner.component.html',
   styleUrl: './cookie-banner.component.scss'
 })
@@ -22,7 +22,7 @@ export class CookieBannerComponent implements OnInit {
       // Petit délai pour une meilleure UX
       setTimeout(() => {
         this.showBanner.set(true);
-      }, 1000);
+      }, 2000);
     }
   }
 

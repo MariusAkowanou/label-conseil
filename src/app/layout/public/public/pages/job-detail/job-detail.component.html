@@ -1,0 +1,187 @@
+<div class="job-detail-page min-h-screen bg-white">
+
+    <!-- Loading State -->
+    @if (isLoading()) {
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="text-center">
+            <i class="fas fa-spinner fa-spin text-4xl text-primary-600 mb-4"></i>
+            <p class="font-body text-gray-600">Chargement en cours...</p>
+        </div>
+    </div>
+    }
+
+    <!-- Not Found State -->
+    @if (notFound() && !isLoading()) {
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="text-center max-w-md mx-auto px-4">
+            <i class="fas fa-exclamation-triangle text-6xl text-gray-400 mb-6"></i>
+            <h1 class="font-heading text-2xl font-bold text-gray-900 mb-4">
+                Offre non trouvée
+            </h1>
+            <p class="font-reading text-gray-600 mb-6">
+                L'offre que vous recherchez n'existe pas ou a été supprimée.
+            </p>
+            <button (click)="goBack()"
+                class="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-colors duration-300">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Retour aux offres
+            </button>
+        </div>
+    </div>
+    }
+
+    <!-- Content -->
+    @if (job() && !isLoading()) {
+    <div>
+        <!-- Header fixe -->
+        <div class="sticky top-20 z-40 bg-primary-600 text-white p-4 shadow-medium">
+            <div class="w-full mx-auto flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <button (click)="goBack()" class="p-2 hover:bg-primary-700 rounded-lg transition-colors">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h1 class="font-heading text-lg font-bold">{{ job()!.title }}</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="flex items-center text-sm">
+                        <i class="fas fa-map-marker-alt mr-1"></i>
+                        {{ job()!.location }}
+                    </span>
+                    <span class="text-sm">{{ job()!.type }}</span>
+                    <!-- Réseaux sociaux -->
+                    <div class="hidden md:flex space-x-2">
+                        <a href="#" class="p-2 hover:bg-primary-700 rounded transition-colors">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="p-2 hover:bg-primary-700 rounded transition-colors">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="p-2 hover:bg-primary-700 rounded transition-colors">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                    </div>
+                    <button (click)="openApplicationModal()"
+                        class="px-4 py-2 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors">
+                        POSTULER
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Contenu scrollable -->
+        <div class="max-w-4xl mx-auto p-6 space-y-12 pt-8">
+            <!-- À propos -->
+            <section class="animate-on-scroll" data-section="content">
+                <h2 class="font-heading text-2xl font-bold text-primary-600 mb-6">À propos</h2>
+                <p class="font-body text-sm font-semibold text-gray-600 mb-4">Excellence matters</p>
+                <div class="space-y-4">
+                    <p class="font-reading text-gray-700 leading-relaxed">{{ job()!.about.mission }}</p>
+                    <p class="font-reading text-gray-700 leading-relaxed">{{ job()!.about.context }}</p>
+                </div>
+            </section>
+            <!-- Descriptif du poste -->
+            <section class="animate-on-scroll animate-on-scroll-delay-100" data-section="content">
+                <h2 class="font-heading text-2xl font-bold text-primary-600 mb-6">Descriptif du poste</h2>
+                <p class="font-reading text-gray-700 leading-relaxed mb-6">{{ job()!.description.intro }}</p>
+                <ul class="space-y-3">
+                    @for (responsibility of job()!.description.responsibilities; track responsibility) {
+                    <li class="flex items-start space-x-3">
+                        <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <span class="font-reading text-gray-700">{{ responsibility }}</span>
+                    </li>
+                    }
+                </ul>
+            </section>
+            <!-- Profil recherché -->
+            <section class="animate-on-scroll animate-on-scroll-delay-200" data-section="content">
+                <h2 class="font-heading text-2xl font-bold text-primary-600 mb-6">Profil recherché</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-body font-semibold text-gray-900 mb-2">Expérience requise</h3>
+                        <p class="font-reading text-gray-700">{{ job()!.profile.experience }}</p>
+                    </div>
+                    <div>
+                        <h3 class="font-body font-semibold text-gray-900 mb-2">Formation</h3>
+                        <p class="font-reading text-gray-700">{{ job()!.profile.education }}</p>
+                    </div>
+                    <div>
+                        <h3 class="font-body font-semibold text-gray-900 mb-2">Compétences requises</h3>
+                        <ul class="space-y-2">
+                            @for (skill of job()!.profile.skills; track skill) {
+                            <li class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <span class="font-reading text-gray-700">{{ skill }}</span>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                    @if (job()!.profile.bonus.length > 0) {
+                    <div>
+                        <h3 class="font-body font-semibold text-gray-900 mb-2">Atouts supplémentaires</h3>
+                        <ul class="space-y-2">
+                            @for (bonus of job()!.profile.bonus; track bonus) {
+                            <li class="flex items-start space-x-3">
+                                <div class="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                                <span class="font-reading text-gray-700">{{ bonus }}</span>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                    }
+                </div>
+            </section>
+            <!-- Ce que nous offrons -->
+            <section class="animate-on-scroll animate-on-scroll-delay-300" data-section="content">
+                <h2 class="font-heading text-2xl font-bold text-primary-600 mb-6">Ce que nous offrons</h2>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="font-body font-semibold text-gray-900 mb-2">Type de contrat</h3>
+                            <p class="font-reading text-gray-700">{{ job()!.offer.contract }}</p>
+                        </div>
+                        <div>
+                            <h3 class="font-body font-semibold text-gray-900 mb-2">Rémunération</h3>
+                            <p class="font-reading text-gray-700">{{ job()!.offer.salary }}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-body font-semibold text-gray-900 mb-2">Avantages</h3>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                            @for (benefit of job()!.offer.benefits; track benefit) {
+                            <li class="flex items-center space-x-2">
+                                <i class="fas fa-check text-primary-600 text-sm"></i>
+                                <span class="font-reading text-gray-700">{{ benefit }}</span>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-body font-semibold text-gray-900 mb-2">Date de prise de poste</h3>
+                        <p class="font-reading text-gray-700">{{ job()!.offer.startDate }}</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Informations complémentaires -->
+            @if (job()!.additionalInfo) {
+            <section class="animate-on-scroll animate-on-scroll-delay-400" data-section="content">
+                <h2 class="font-heading text-2xl font-bold text-primary-600 mb-6">Informations complémentaires</h2>
+                <p class="font-reading text-gray-700 leading-relaxed">{{ job()!.additionalInfo }}</p>
+            </section>
+            }
+            <!-- CTA -->
+            <section class="text-center py-12 border-t border-gray-200 animate-on-scroll animate-on-scroll-delay-500"
+                data-section="content">
+                <button (click)="openApplicationModal()"
+                    class="px-8 py-4 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-colors duration-300 shadow-medium">
+                    Postuler à cette offre
+                </button>
+            </section>
+        </div>
+    </div>
+    }
+    <!-- Modal de candidature (même code que précédemment) -->
+    @if (showModal()) {
+    <app-job-modal [job]="job()">
+    </app-job-modal>
+    }
+
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, signal, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MenuConfig } from '../../models/menu.interface';
@@ -7,7 +7,7 @@ import { MenuConfig } from '../../models/menu.interface';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })

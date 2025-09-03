@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "Label Conseil",
+    "name": "Label Conseils",
     "logo": "/assets/images/logo.png",
     "route": "/"
   },
@@ -102,23 +102,9 @@
       ]
     },
     {
-      "label": "Nos accompagnements",
-      "type": "dropdown",
-      "icon": "fas fa-chevron-down",
-      "items": [
-        {
-          "label": "Expérience Label Conseil",
-          "route": "/accompagnements/experience",
-          "icon": "fas fa-star",
-          "description": "Notre approche unique d'accompagnement"
-        },
-        {
-          "label": "Cas clients",
-          "route": "/accompagnements/cas-clients",
-          "icon": "fas fa-users",
-          "description": "Découvrez nos réussites et témoignages"
-        }
-      ]
+      "label": "Expérience Label Conseils",
+      "route": "/accompagnements/experience",
+      "type": "link"
     },
     {
       "label": "Nous rejoindre",

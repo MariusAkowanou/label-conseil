@@ -1,6 +1,6 @@
 @if (menuConfig(); as config) {
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" 
-    [class.backdrop-blur-md]="isScrolled()" [class.shadow-soft]="isScrolled()" [class.bg-transparent]="!isScrolled()">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" [class.backdrop-blur-md]="isScrolled()"
+    [class.shadow-soft]="isScrolled()" [class.bg-transparent]="!isScrolled()">
 
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between lg:justify-start lg:space-x-5 h-16 lg:h-20">
@@ -9,7 +9,7 @@
             <div class="flex-shrink-0">
                 <a [routerLink]="config.brand.route" class="flex items-center space-x-3">
                     <img [src]="config.brand.logo" [alt]="config.brand.name" class="h-8 w-auto lg:h-10" loading="lazy">
-                  
+
                 </a>
             </div>
 
@@ -53,7 +53,7 @@
                                     class=" text-sm text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
                                     {{ dropdownItem.label }}
                                 </div>
-                               
+
                             </div>
                         </a>
                         }
@@ -78,65 +78,65 @@
             </div>
         </div>
 
-        <!-- Navigation Mobile -->
-        @if (isMobileMenuOpen()) {
-        <div class="lg:hidden fixed inset-0 top-16 bg-white z-40 animate-slide-down">
-            <!-- Overlay pour fermer en cliquant à côté -->
-            <div class="absolute inset-0 bg-black bg-opacity-20" (click)="closeMobileMenu()">
-            </div>
 
-            <!-- Menu content -->
-            <div class="relative bg-white h-full">
-                <div class="px-4 py-6 space-y-2 max-h-screen overflow-y-auto">
-                    @for (item of config.navigation; track item.label) {
-                    @if (item.type === 'link') {
-                    <!-- Lien mobile -->
-                    <a [routerLink]="item.route" (click)="closeMobileMenu()"
-                        routerLinkActive="text-primary-600 bg-primary-50"
-                        class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
-                        [class.bg-primary-500]="item.highlight" [class.text-white]="item.highlight"
-                        [class.hover:bg-primary-600]="item.highlight">
-                        {{ item.label }}
-                    </a>
-                    } @else {
-                    <!-- Dropdown mobile (CLICK) -->
-                    <div class="space-y-2">
-                        <button (click)="toggleMobileDropdown(item.label)"
-                            class="flex items-center justify-between w-full px-4 py-3 text-left rounded-lg text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
-                            [class.text-primary-600]="isMobileDropdownOpen(item.label)"
-                            [class.bg-primary-50]="isMobileDropdownOpen(item.label)"
-                            [attr.aria-expanded]="isMobileDropdownOpen(item.label)">
-                            <span>{{ item.label }}</span>
-                            <i class="fas fa-chevron-down transform transition-transform duration-300"
-                                [class.rotate-180]="isMobileDropdownOpen(item.label)" aria-hidden="true"></i>
-                        </button>
-
-                        <!-- Dropdown items mobile -->
-                        @if (isMobileDropdownOpen(item.label)) {
-                        <div class="ml-4 space-y-1 animate-fade-in border-l-2 border-primary-200 pl-4">
-                            @for (dropdownItem of item.items; track dropdownItem.label) {
-                            <a [routerLink]="dropdownItem.route" (click)="closeMobileMenu()"
-                                routerLinkActive="text-primary-600 bg-primary-50"
-                                class="flex items-center space-x-3 px-4 py-3 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200 group">
-                                @if (dropdownItem.icon) {
-                                <i [class]="dropdownItem.icon"
-                                    class="text-primary-500 group-hover:text-primary-600 transition-colors duration-200"></i>
-                                }
-                                <div class="flex-1">
-                                    <div class="font-medium">{{ dropdownItem.label }}</div>
-                                   
-                                </div>
-                            </a>
-                            }
-                        </div>
-                        }
-                    </div>
-                    }
-                    }
-                </div>
-            </div>
-        </div>
-        }
     </nav>
 </header>
+}
+<!-- Navigation Mobile -->
+@if (isMobileMenuOpen() && menuConfig(); as config) {
+<div class="lg:hidden fixed inset-0 top-16 bg-white z-40 animate-slide-down">
+    <!-- Overlay pour fermer en cliquant à côté -->
+    <div class="absolute inset-0 bg-black bg-opacity-20" (click)="closeMobileMenu()">
+    </div>
+
+    <!-- Menu content -->
+    <div class="relative bg-white h-full">
+        <div class="px-4 py-6 space-y-2 max-h-screen overflow-y-auto">
+            @for (item of config.navigation; track item.label) {
+            @if (item.type === 'link') {
+            <!-- Lien mobile -->
+            <a [routerLink]="item.route" (click)="closeMobileMenu()" routerLinkActive="text-primary-600 bg-primary-50"
+                class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
+                [class.bg-primary-500]="item.highlight" [class.text-white]="item.highlight"
+                [class.hover:bg-primary-600]="item.highlight">
+                {{ item.label }}
+            </a>
+            } @else {
+            <!-- Dropdown mobile (CLICK) -->
+            <div class="space-y-2">
+                <button (click)="toggleMobileDropdown(item.label)"
+                    class="flex items-center justify-between w-full px-4 py-3 text-left rounded-lg text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-colors duration-200"
+                    [class.text-primary-600]="isMobileDropdownOpen(item.label)"
+                    [class.bg-primary-50]="isMobileDropdownOpen(item.label)"
+                    [attr.aria-expanded]="isMobileDropdownOpen(item.label)">
+                    <span>{{ item.label }}</span>
+                    <i class="fas fa-chevron-down transform transition-transform duration-300"
+                        [class.rotate-180]="isMobileDropdownOpen(item.label)" aria-hidden="true"></i>
+                </button>
+
+                <!-- Dropdown items mobile -->
+                @if (isMobileDropdownOpen(item.label)) {
+                <div class="ml-4 space-y-1 animate-fade-in border-l-2 border-primary-200 pl-4">
+                    @for (dropdownItem of item.items; track dropdownItem.label) {
+                    <a [routerLink]="dropdownItem.route" (click)="closeMobileMenu()"
+                        routerLinkActive="text-primary-600 bg-primary-50"
+                        class="flex items-center space-x-3 px-4 py-3 rounded-md text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-200 group">
+                        @if (dropdownItem.icon) {
+                        <i [class]="dropdownItem.icon"
+                            class="text-primary-500 group-hover:text-primary-600 transition-colors duration-200"></i>
+                        }
+                        <div class="flex-1">
+                            <div class="font-medium">{{ dropdownItem.label }}</div>
+
+                        </div>
+                    </a>
+                    }
+                </div>
+                }
+            </div>
+            }
+            }
+        </div>
+    </div>
+</div>
 }

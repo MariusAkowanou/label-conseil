@@ -27,12 +27,12 @@ export class SeoService {
 
     // Données par défaut
     private defaultSeo: SeoData = {
-        title: 'Label Conseil - Conseil et Expertise',
-        description: 'Label Conseil vous accompagne dans vos projets avec expertise et professionnalisme. Découvrez nos services de conseil personnalisés.',
-        keywords: 'conseil, expertise, label conseil, consulting, accompagnement',
+        title: 'Label Conseils - Conseils et Expertise',
+        description: 'Label Conseils vous accompagne dans vos projets avec expertise et professionnalisme. Découvrez nos services de conseil personnalisés.',
+        keywords: 'conseils, expertise, label conseils, consulting, accompagnement',
         image: '/assets/images/og-default.jpg',
         type: 'website',
-        author: 'Label Conseil'
+        author: 'Label Conseils'
     };
 
     constructor() {
@@ -106,13 +106,13 @@ export class SeoService {
     }
 
     private updateOpenGraph(data: SeoData) {
-        const baseUrl = 'https://www.label-conseil.com';
+        const baseUrl = 'https://www.label-conseils.com';
 
         this.updateMetaTag('property', 'og:title', data.title!);
         this.updateMetaTag('property', 'og:description', data.description!);
         this.updateMetaTag('property', 'og:type', data.type!);
         this.updateMetaTag('property', 'og:url', data.url ? `${baseUrl}${data.url}` : baseUrl);
-        this.updateMetaTag('property', 'og:site_name', 'Label Conseil');
+        this.updateMetaTag('property', 'og:site_name', 'Label Conseils   ');
         this.updateMetaTag('property', 'og:locale', 'fr_FR');
 
         if (data.image) {
@@ -140,7 +140,7 @@ export class SeoService {
         this.updateMetaTag('name', 'twitter:creator', '@labelconseil');
 
         if (data.image) {
-            const baseUrl = 'https://www.label-conseil.com';
+            const baseUrl = 'https://www.label-conseils.com';
             const imageUrl = data.image.startsWith('http') ? data.image : `${baseUrl}${data.image}`;
             this.updateMetaTag('name', 'twitter:image', imageUrl);
         }
@@ -151,7 +151,7 @@ export class SeoService {
             return; // Ne rien faire côté serveur
         }
 
-        const baseUrl = 'https://www.label-conseil.com';
+        const baseUrl = 'https://www.label-conseils.com';
         const canonicalUrl = `${baseUrl}${url}`;
 
         // Supprimer l'ancien lien canonical s'il existe
@@ -185,12 +185,12 @@ export class SeoService {
             "name": data.title,
             "description": data.description,
             ...(data.type === 'website' && {
-                "url": "https://www.label-conseil.com",
-                "logo": "https://www.label-conseil.com/assets/images/logo.png",
+                "url": "https://www.label-conseils.com",
+                "logo": "https://www.label-conseils.com/assets/images/logo.png",
                 "sameAs": [
-                    "https://linkedin.com/company/label-conseil",
-                    "https://facebook.com/labelconseil",
-                    "https://twitter.com/labelconseil"
+                    "https://linkedin.com/company/label-conseils",
+                    "https://facebook.com/labelconseils",
+                    "https://twitter.com/labelconseils"
                 ],
                 "contactPoint": {
                     "@type": "ContactPoint",
@@ -203,7 +203,7 @@ export class SeoService {
                 "headline": data.title,
                 "author": {
                     "@type": "Organization",
-                    "name": data.author || "Label Conseil"
+                    "name": data.author || "Label Conseils"
                 },
                 "publisher": {
                     "@type": "Organization",
@@ -228,16 +228,16 @@ export class SeoService {
     // Méthodes utilitaires pour les pages communes
     setHomePage() {
         this.updateSeo({
-            title: 'Label Conseil - Expertise et Conseil Professionnel',
-            description: 'Découvrez Label Conseil, votre partenaire de confiance pour tous vos besoins en conseil et expertise. Solutions personnalisées et accompagnement professionnel.',
-            keywords: 'label conseil, conseil professionnel, expertise, consulting, accompagnement entreprise',
+            title: 'Label Conseils - Expertise et Conseils Professionnels',
+            description: 'Découvrez Label Conseils, votre partenaire de confiance pour tous vos besoins en conseil et expertise. Solutions personnalisées et accompagnement professionnel.',
+            keywords: 'label conseils, conseils professionnels, expertise, consulting, accompagnement entreprise',
             url: '/'
         });
     }
 
     setContactPage() {
         this.updateSeo({
-            title: 'Contact - Label Conseil',
+            title: 'Contact - Label Conseils',
             description: 'Contactez Label Conseil pour discuter de vos projets. Notre équipe d\'experts est à votre écoute pour vous accompagner.',
             keywords: 'contact label conseil, devis, consultation, expertise conseil',
             url: '/contact'
@@ -246,7 +246,7 @@ export class SeoService {
 
     setServicesPage() {
         this.updateSeo({
-            title: 'Nos Services - Label Conseil',
+            title: 'Nos Services - Label Conseils',
             description: 'Découvrez la gamme complète des services de Label Conseil. Expertise, conseil stratégique et accompagnement personnalisé.',
             keywords: 'services conseil, expertise professionnelle, conseil stratégique, accompagnement',
             url: '/services'
@@ -255,8 +255,8 @@ export class SeoService {
 
     setAboutPage() {
         this.updateSeo({
-            title: 'À Propos - Label Conseil',
-            description: 'Découvrez Label Conseil, notre histoire, nos valeurs et notre équipe d\'experts dédiés à votre réussite.',
+            title: 'À Propos - Label Conseils',
+            description: 'Découvrez Label Conseils, notre histoire, nos valeurs et notre équipe d\'experts dédiés à votre réussite.',
             keywords: 'à propos label conseil, équipe, histoire, valeurs, expertise',
             url: '/about'
         });

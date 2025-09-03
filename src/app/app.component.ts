@@ -10,5 +10,5 @@ import { CookieBannerComponent } from './shared/components/cookie-banner/cookie-
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'label-conseil';
+  title = 'label-conseils';
 }

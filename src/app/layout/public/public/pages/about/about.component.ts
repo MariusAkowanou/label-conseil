@@ -1,12 +1,12 @@
 import { Component, OnInit, inject, signal, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SeoService } from '../../../../../shared/services/local/seo.service';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
@@ -59,15 +59,15 @@ export class AboutComponent implements OnInit {
     approaches: [
       {
         title: "Approche sur mesure et participative",
-        description: "fondée sur une maîtrise des techniques de conseil, une expertise dans la résolution de problèmes complexes transdisciplinaires, et un réel investissement en R&D (stratégie, management, design thinking, innovation collaborative...), en lien avec le monde académique"
+        description: "fondée sur une maîtrise des techniques de conseils, une expertise dans la résolution de problèmes complexes transdisciplinaires, et un réel investissement en R&D (stratégie, management, design thinking, innovation collaborative...), en lien avec le monde académique"
       },
       {
-        title: "Cabinet de conseil indépendant",
+        title: "Cabinet de conseils indépendant",
         description: "sans conflit d'intérêt : un allié qui, au-delà des recommandations, s'implique à vos côtés jusqu'à la réussite de vos ambitions"
       },
       {
         title: "Application systématique de la qualité totale",
-        description: "dans la gestion de chaque projet, étude, conseil et formation"
+        description: "dans la gestion de chaque projet, étude, conseils et formation"
       }
     ],
     commitments: [

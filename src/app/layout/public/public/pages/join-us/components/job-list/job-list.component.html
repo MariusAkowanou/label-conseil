@@ -1,0 +1,47 @@
+<div class="space-y-4 animate-on-scroll animate-on-scroll-delay-200" data-section="jobs">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between py-4 border-b border-gray-200">
+    <h3 class="font-heading text-xl font-bold">
+      {{ companyName }} (le groupe)
+    </h3>
+    <span class="text-sm text-gray-600">{{ jobs().length }} jobs</span>
+  </div>
+
+  <!-- Jobs -->
+  @for (job of jobs(); track job) {
+  <div
+    class="job-item bg-white border border-gray-200 rounded-lg p-6 hover:shadow-medium transition-all duration-300 cursor-pointer"
+    [routerLink]="['/nous-rejoindre', job.id]">
+    <div class="flex items-start justify-between">
+      <div class="flex-1">
+        <h4 class="font-heading text-lg font-bold text-gray-900 mb-2">
+          {{ job.title }}
+        </h4>
+        <div class="flex items-center space-x-4 text-sm text-gray-600 mb-2">
+          <span class="flex items-center">
+            <i class="fas fa-briefcase mr-1"></i>
+            {{ job.type }}
+          </span>
+          <span class="flex items-center">
+            <i class="fas fa-map-marker-alt mr-1"></i>
+            {{ job.location }}
+          </span>
+        </div>
+      </div>
+      <button (click)="$event.preventDefault(); $event.stopPropagation(); jobSelected.emit(job)"
+        class="px-4 py-2 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 transition-colors duration-300">
+        Voir l'offre
+      </button>
+    </div>
+  </div>
+  }
+
+  <!-- Message si aucune offre -->
+  @if (jobs.length === 0) {
+  <div class="text-center py-12">
+    <i class="fas fa-search text-4xl text-gray-400 mb-4"></i>
+    <p class="font-reading text-gray-600">Aucune offre ne correspond à vos critères.</p>
+  </div>
+  }
+</div>

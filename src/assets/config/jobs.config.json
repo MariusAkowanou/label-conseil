@@ -1,0 +1,170 @@
+{
+  "company": {
+    "name": "Label Conseils",
+    "description": "Label Conseils est un cabinet de conseil né pour répondre aux nouveaux besoins des organisations qui font face à des défis de plus en plus complexes.",
+    "stats": {
+      "collaborators": 25,
+      "averageAge": 28,
+      "turnover": 8,
+      "genderParity": 55
+    },
+    "values": [
+      "Excellence et rigueur dans chaque mission",
+      "Innovation et agilité dans nos approches", 
+      "Accompagnement humain personnalisé",
+      "Développement professionnel continu"
+    ]
+  },
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Consultant Senior - Stratégies de Territoires",
+      "type": "CDI",
+      "location": "Cotonou",
+      "expertise": "Stratégies de Territoires",
+      "experience": "5+ ans",
+      "about": {
+        "mission": "Rejoignez notre équipe de consultants spécialisés dans l'accompagnement des collectivités territoriales et organisations publiques.",
+        "context": "Dans un contexte de décentralisation croissante et de nouveaux défis territoriaux, nous recherchons un consultant expérimenté pour renforcer notre expertise."
+      },
+      "description": {
+        "intro": "Votre rôle sera d'accompagner nos clients dans l'élaboration et la mise en œuvre de stratégies territoriales durables.",
+        "responsibilities": [
+          "Pilotage de missions d'accompagnement de collectivités territoriales",
+          "Animation de groupes de travail thématiques et concertations multi-acteurs",
+          "Élaboration de stratégies de développement territorial",
+          "Mise en réseaux d'acteurs publics et privés",
+          "Conduite d'études de faisabilité et évaluations ex-post"
+        ]
+      },
+      "profile": {
+        "experience": "Minimum 5 ans d'expérience en conseil territorial ou dans une collectivité",
+        "education": "Master en aménagement du territoire, développement local ou équivalent",
+        "skills": [
+          "Excellente connaissance des enjeux territoriaux",
+          "Capacités d'animation et de facilitation",
+          "Maîtrise des outils de concertation",
+          "Sens relationnel et diplomatie",
+          "Autonomie et rigueur"
+        ],
+        "bonus": [
+          "Expérience en bureau d'études",
+          "Connaissance du contexte africain",
+          "Maîtrise de logiciels SIG"
+        ]
+      },
+      "offer": {
+        "contract": "CDI",
+        "salary": "Selon profil et expérience",
+        "benefits": [
+          "Formation continue",
+          "Télétravail partiel",
+          "Participation aux résultats",
+          "Mutuelle d'entreprise"
+        ],
+        "startDate": "Dès que possible"
+      },
+      "additionalInfo": "Poste basé à Cotonou avec déplacements fréquents dans la région. Opportunité de travailler sur des projets d'envergure avec des partenaires internationaux."
+    },
+    {
+      "id": "2", 
+      "title": "Expert en Services Économiques et Financiers",
+      "type": "CDD",
+      "location": "Cotonou",
+      "expertise": "Services Économiques et Financiers",
+      "experience": "7+ ans",
+      "about": {
+        "mission": "Intégrez notre équipe d'experts financiers pour accompagner les entreprises dans leur développement économique.",
+        "context": "Face aux défis économiques contemporains, nous recherchons un expert pour renforcer notre offre en conseil financier et économique."
+      },
+      "description": {
+        "intro": "Vous accompagnerez nos clients dans toutes les phases de leur développement économique et financier.",
+        "responsibilities": [
+          "Conseil en création et évaluation d'entreprise",
+          "Accompagnement dans la recherche de financement",
+          "Restructuration et redressement d'entreprise",
+          "Élaboration d'études économiques sectorielles",
+          "Gestion de projets d'investissement"
+        ]
+      },
+      "profile": {
+        "experience": "7+ ans en conseil financier ou direction financière",
+        "education": "Master en finance, économie ou école de commerce",
+        "skills": [
+          "Expertise en analyse financière",
+          "Maîtrise des outils de valorisation",
+          "Connaissance des marchés financiers",
+          "Capacités de négociation",
+          "Vision stratégique"
+        ],
+        "bonus": [
+          "Certification professionnelle (CFA, etc.)",
+          "Expérience en private equity",
+          "Connaissance du marché ouest-africain"
+        ]
+      },
+      "offer": {
+        "contract": "CDD",
+        "salary": "60-80k selon profil",
+        "benefits": [
+          "Variable sur performance",
+          "Formation certifiante",
+          "Véhicule de fonction",
+          "Assurance santé premium"
+        ],
+        "startDate": "Mars 2025"
+      },
+      "additionalInfo": "Poste évolutif vers un rôle de directeur associé selon performance. Participation aux développements stratégiques du cabinet."
+    },
+    {
+      "id": "3",
+      "title": "Consultant Junior - Gestion des Ressources Humaines", 
+      "type": "CDI",
+      "location": "Cotonou",
+      "expertise": "Gestion de la Productivité Humaine",
+      "experience": "2-4 ans",
+      "about": {
+        "mission": "Rejoignez notre équipe RH pour accompagner les entreprises dans leur développement organisationnel.",
+        "context": "Le marché du travail évolue rapidement et nous recherchons un consultant pour accompagner nos clients dans leurs transformations RH."
+      },
+      "description": {
+        "intro": "Vous interviendrez sur des missions variées de conseil en ressources humaines et développement organisationnel.",
+        "responsibilities": [
+          "Accompagnement dans les processus de recrutement",
+          "Élaboration de programmes de formation",
+          "Audit organisationnel et recommandations",
+          "Conception de systèmes d'évaluation",
+          "Conseil en gestion des compétences"
+        ]
+      },
+      "profile": {
+        "experience": "2 à 4 ans en RH ou conseil RH",
+        "education": "Master en RH, psychologie du travail ou management",
+        "skills": [
+          "Connaissance des outils RH",
+          "Capacités d'analyse et de synthèse",
+          "Sens de l'écoute et empathie",
+          "Maîtrise des techniques d'entretien",
+          "Rigueur et confidentialité"
+        ],
+        "bonus": [
+          "Certification en outils psychométriques",
+          "Expérience en cabinet de recrutement",
+          "Connaissance du droit du travail béninois"
+        ]
+      },
+      "offer": {
+        "contract": "CDI",
+        "salary": "35-45k selon profil",
+        "benefits": [
+          "Plan de formation personnalisé",
+          "Mentorat senior",
+          "Congés formation",
+          "Participation transport"
+        ],
+        "startDate": "Avril 2025"
+      },
+      "additionalInfo": "Poste idéal pour développer une expertise RH complète avec accompagnement d'un senior expérimenté."
+    }
+  ]
+}

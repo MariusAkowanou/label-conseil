@@ -24,6 +24,18 @@ export const routes: Routes = [
             {
                 path: 'accompagnements/experience',
                 loadComponent: () => import('./layout/public/public/pages/experience/experience.component').then(m => m.ExperienceComponent)
+            },
+            {
+                path: 'nous-rejoindre',
+                loadComponent: () => import('./layout/public/public/pages/join-us/join-us.component').then(m => m.JoinUsComponent)
+            },
+            {
+                path: 'nous-rejoindre/:id',
+                loadComponent: () => import('./layout/public/public/pages/job-detail/job-detail.component').then(m => m.JobDetailComponent)
+            },
+            {
+                path: 'formulaire-de-candidature/:id',
+                loadComponent: () => import('./layout/public/public/pages/job-detail/components/job-modal/job-modal.component').then(m => m.JobModalComponent)
             }
         ]
     }

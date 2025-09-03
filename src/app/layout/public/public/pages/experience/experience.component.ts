@@ -1,12 +1,12 @@
 import { Component, OnInit, inject, signal, PLATFORM_ID } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SeoService } from '../../../../../shared/services/local/seo.service';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss'
 })
@@ -16,9 +16,9 @@ export class ExperienceComponent implements OnInit {
 
   // Données de la page
   heroData = {
-    tagline: "LABEL CONSEIL : EXCELLENCE MATTERS",
-    title: "L'expérience Label Conseil",
-    description: "Sur un marché du conseil encore dominé par les grands acteurs généralistes, Label Conseil propose une alternative résolument différente à la structure agile et aux processus centrés sur l'expertise, l'excellence, l'humain et la dimension conseil."
+    tagline: "LABEL CONSEILS : EXCELLENCE MATTERS",
+    title: "L'expérience Label Conseils",
+    description: "Sur un marché du conseils encore dominé par les grands acteurs généralistes, Label Conseil propose une alternative résolument différente à la structure agile et aux processus centrés sur l'expertise, l'excellence, l'humain et la dimension conseils."
   };
 
   processData = {
@@ -83,15 +83,15 @@ export class ExperienceComponent implements OnInit {
 
   partnershipData = {
     title: "Un interlocuteur durable pour votre carrière",
-    description: "L'accompagnement des talents est au cœur de notre ADN depuis notre création, faisant de Label Conseil l'un des premiers cabinets de conseil à intégrer l'expérience candidats à son modèle de développement.",
+    description: "L'accompagnement des talents est au cœur de notre ADN depuis notre création, faisant de Label Conseils l'un des premiers cabinets de conseils à intégrer l'expérience candidats à son modèle de développement.",
     commitment: "Pour aider les candidats à révéler tout leur potentiel, nous cultivons avec eux une relation de proximité basée sur notre compréhension de leur métier et un accompagnement quotidien. En cas d'opportunité en adéquation avec votre profil, nous vous aidons à réussir les process et suivons votre prise de poste même après la période d'intégration."
   };
 
   ngOnInit() {
     this.seo.updateSeo({
-      title: "L'expérience Label Conseil - Notre approche unique",
+      title: "L'expérience Label Conseils - Notre approche unique",
       description: "Découvrez notre approche méthodique et sur-mesure : de la phase préparatoire au suivi post-intégration, une expérience client et candidat inégalée.",
-      keywords: "expérience label conseil, méthodologie, accompagnement, process recrutement",
+      keywords: "expérience label conseils, méthodologie, accompagnement, process recrutement",
       url: "/experience"
     });
 

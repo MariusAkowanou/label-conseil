@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, signal, PLATFORM_ID, AfterViewInit } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Expertise, ExpertiseConfig } from '../../../../../shared/model/expertise.interface';
@@ -8,7 +8,7 @@ import { SeoService } from '../../../../../shared/services/local/seo.service';
 @Component({
   selector: 'app-expertise',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './expertise.component.html',
   styleUrl: './expertise.component.scss'
 })
@@ -97,9 +97,9 @@ export class ExpertiseComponent implements OnInit, AfterViewInit {
 
   private updateSEO(expertise: Expertise) {
     this.seo.updateSeo({
-      title: `${expertise.name} - Label Conseil`,
+      title: `${expertise.name} - Label Conseils`,
       description: expertise.description,
-      keywords: `${expertise.name.toLowerCase()}, conseil, recrutement, expertise, ${expertise.slug}`,
+      keywords: `${expertise.name.toLowerCase()}, conseils, recrutement, expertise, ${expertise.slug}`,
       url: `/expertises/${expertise.slug}`,
       type: 'article'
     });

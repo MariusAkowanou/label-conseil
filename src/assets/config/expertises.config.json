@@ -3,17 +3,17 @@
     {
       "id": "carriere",
       "slug": "carriere",
-      "name": "Label Conseil Carrière",
+      "name": "Label Conseils Carrière",
       "tagline": "Votre spécialiste des profils issus du monde du conseil et de l'accompagnement",
       "heroImage": "/assets/images/hero.png",
-      "description": "Première activité développée par le cabinet, Label Conseil Carrière accompagne les cabinets de conseil et les entreprises dans le recrutement de profils issus du monde du conseil et de l'accompagnement.",
-      "detailedDescription": "Les consultants en recrutement spécialisés de Label Conseil Carrière réalisent plus de 150 recrutements par an en accompagnant tous les types d'interlocuteurs : cabinets de conseil, startups, ETI et entreprises du CAC 40.",
+      "description": "Première activité développée par le cabinet, Label Conseils Carrière accompagne les cabinets de conseil et les entreprises dans le recrutement de profils issus du monde du conseil et de l'accompagnement.",
+      "detailedDescription": "Les consultants en recrutement spécialisés de Label Conseils Carrière réalisent plus de 150 recrutements par an en accompagnant tous les types d'interlocuteurs : cabinets de conseil, startups, ETI et entreprises du CAC 40.",
       "marketContext": {
         "title": "Un marché en mouvement perpétuel",
         "content": "Les cabinets de conseil sont passés maîtres dans le fait d'anticiper les tendances et d'adapter leurs offres pour être au plus proche des besoins de leurs clients. Les cabinets spécialisent de plus en plus leurs consultants pour rester en amont des tendances et se différencier sur un marché fortement concurrentiel."
       },
       "recruitment": {
-        "title": "Label Conseil Carrière recrute :",
+        "title": "Label Conseils Carrière recrute :",
         "categories": [
           {
             "title": "En directions corporate :",
@@ -44,17 +44,17 @@
     {
       "id": "consulting",
       "slug": "consulting",
-      "name": "Label Conseil Consulting",
+      "name": "Label Conseils Consulting",
       "tagline": "Votre expert des métiers de la stratégie et de l'innovation",
       "heroImage": "/assets/images/hero.png",
-      "description": "Label Conseil Consulting accompagne les entreprises dans le recrutement de profils stratégiques issus du monde du consulting et de l'innovation d'entreprise.",
+      "description": "Label Conseils Consulting accompagne les entreprises dans le recrutement de profils stratégiques issus du monde du consulting et de l'innovation d'entreprise.",
       "detailedDescription": "Nos consultants spécialisés maîtrisent les codes du conseil en stratégie et accompagnent les entreprises dans leurs recrutements de profils senior et dirigeants pour piloter leur transformation stratégique.",
       "marketContext": {
         "title": "L'innovation au cœur de la transformation",
         "content": "Dans un contexte de transformation digitale accélérée, les entreprises recherchent des profils capables d'anticiper les mutations sectorielles et de piloter les projets d'innovation stratégique avec agilité et vision long terme."
       },
       "recruitment": {
-        "title": "Label Conseil Consulting recrute :",
+        "title": "Label Conseils Consulting recrute :",
         "categories": [
           {
             "title": "En directions stratégiques :",
@@ -86,17 +86,17 @@
     {
       "id": "digital",
       "slug": "digital",
-      "name": "Label Conseil Digital",
+      "name": "Label Conseils Digital",
       "tagline": "Votre partenaire pour les métiers du digital et de la transformation",
       "heroImage": "/assets/images/hero.png",
-      "description": "Label Conseil Digital accompagne les entreprises dans leurs recrutements de profils digital, hors profils techniques, pour piloter leur transformation numérique.",
+      "description": "Label Conseils Digital accompagne les entreprises dans leurs recrutements de profils digital, hors profils techniques, pour piloter leur transformation numérique.",
       "detailedDescription": "Nos experts du digital comprennent les enjeux de la transformation numérique et identifient les talents capables d'accompagner les entreprises dans leur évolution digitale et leur croissance en ligne.",
       "marketContext": {
         "title": "La révolution digitale en marche",
         "content": "Les entreprises accélèrent leur transformation digitale et recherchent des profils expérimentés pour piloter leurs projets numériques, développer leur présence en ligne et optimiser l'expérience client dans un monde de plus en plus connecté."
       },
       "recruitment": {
-        "title": "Label Conseil Digital recrute :",
+        "title": "Label Conseils Digital recrute :",
         "categories": [
           {
             "title": "En transformation digitale :",
@@ -212,7 +212,7 @@
     {
       "id": "productivite-humaine",
       "slug": "productivite-humaine",
-      "name": "Gestion de la Productivité Humaine",
+      "name": " Gestion de la Productivité Humaine",
       "tagline": "Excellence en gestion des ressources humaines et développement organisationnel",
       "heroImage": "/assets/images/expertises/rh-hero.jpg",
       "description": "Expertise complète en gestion des ressources humaines, du recrutement au développement des compétences, en passant par l'optimisation organisationnelle.",

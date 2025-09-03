@@ -1,5 +1,5 @@
 import { Component, OnInit, signal, inject, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MenuConfig, MenuItem } from '../../models/menu.interface';
@@ -7,7 +7,7 @@ import { MenuConfig, MenuItem } from '../../models/menu.interface';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })

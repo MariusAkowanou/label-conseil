@@ -11,11 +11,14 @@ export const authInterceptor: HttpInterceptorFn = (
   const authService = inject(AuthService);
   const baseUrl = environment.apiUrl;
 
-  // Ajouter la base URL
+  // Exclure les requêtes vers les assets et les URLs externes
+  if (req.url.startsWith('/assets/') || req.url.startsWith('http')) {
+    return next(req);
+  }
+
+  // Ajouter la base URL pour les requêtes API
   let apiReq = req.clone({
-    url: req.url.startsWith('http')
-      ? req.url
-      : `${baseUrl}/${req.url.replace(/^\//, '')}`,
+    url: `${baseUrl}/${req.url.replace(/^\//, '')}`,
     withCredentials: true,
   });
 
