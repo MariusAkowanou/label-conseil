@@ -22,7 +22,7 @@ export class CookieBannerComponent implements OnInit {
       // Petit délai pour une meilleure UX
       setTimeout(() => {
         this.showBanner.set(true);
-      }, 2000);
+      }, 5000);
     }
   }
 

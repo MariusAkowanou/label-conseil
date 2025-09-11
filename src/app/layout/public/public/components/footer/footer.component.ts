@@ -64,10 +64,10 @@ export class FooterComponent implements OnInit {
       label: 'Conditions d\'utilisation',
       route: '/conditions-utilisation'
     },
-    {
+    /*{
       label: 'Plan du site',
       route: '/plan-du-site'
-    }
+    }*/
   ];
 
   ngOnInit() {

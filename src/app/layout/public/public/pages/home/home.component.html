@@ -195,7 +195,7 @@
                 </h2>
 
                 <!-- Grille des logos partenaires -->
-                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 lg:gap-6 items-center">
+                <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-4 lg:gap-6 items-center">
                     @for (partner of partnersData.partners; track partner.name; let i = $index) {
                     <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-soft hover:shadow-medium transition-all duration-300 h-16 sm:h-18 partner-logo animate-on-scroll"
                         [class]="'animate-on-scroll-delay-' + ((i % 6) * 50)">
