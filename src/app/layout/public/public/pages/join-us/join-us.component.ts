@@ -61,56 +61,7 @@ export class JoinUsComponent implements OnInit {
       });
   }
 
-  // Getters pour les jobs filtrés
-  get filteredJobs() {
-    const config = this.jobsConfig();
-    if (!config) return [];
-
-    let jobs = config.jobs;
-
-    if (this.selectedCity() !== 'all') {
-      jobs = jobs.filter((job: any) => job.location === this.selectedCity());
-    }
-
-    if (this.selectedContractType() !== 'all') {
-      jobs = jobs.filter((job: any) => job.type === this.selectedContractType());
-    }
-
-    const query = this.searchQuery().toLowerCase();
-    if (query) {
-      jobs = jobs.filter((job: any) =>
-        job.title.toLowerCase().includes(query) ||
-        job.expertise.toLowerCase().includes(query)
-      );
-    }
-
-    return jobs;
-  }
-
-  get availableCities() {
-    const config = this.jobsConfig();
-    if (!config) return [];
-    return [...new Set(config.jobs.map((job: any) => job.location))];
-  }
-
-  get availableContractTypes() {
-    const config = this.jobsConfig();
-    if (!config) return [];
-    return [...new Set(config.jobs.map((job: any) => job.type))];
-  }
-
-  // Actions des filtres
-  onCityChanged(city: string) {
-    this.selectedCity.set(city);
-  }
-
-  onContractChanged(type: string) {
-    this.selectedContractType.set(type);
-  }
-
-  onSearchChanged(query: string) {
-    this.searchQuery.set(query);
-  }
+  
 
   onJobSelected(job: any) {
     this.router.navigate(['/nous-rejoindre', job.id]);

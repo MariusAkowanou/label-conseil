@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     stats: {
       experience: "10+",
       clients: "500+",
-      expertises: "3"
+      expertises: "16"
     }
   };
 
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
         id: "organisation",
         title: "Notre organisation",
         subtitle: "L'hyperspécialisation",
-        description: "Nos 3 expertises nous permettent de vous proposer un accompagnement sur-mesure par des spécialistes de vos métiers, pour répondre à tous vos enjeux.",
+        description: "Nos expertises nous permettent de vous proposer un accompagnement sur-mesure par des spécialistes de vos métiers, pour répondre à tous vos enjeux.",
         color: "gray"
       },
       {
@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
 
   expertiseData = {
     title: "Notre secret ? La maîtrise de vos métiers",
-    description: "Label Conseil se compose de 3 expertises : Carrière, Consulting et Digital.",
+    description: "Label Conseil se compose de 16 expertises : Carrière, Consulting , Digital ... jusqu'à 16 expertises.",
     details: "Cette hyperspécialisation nous permet de maîtriser parfaitement votre environnement, de comprendre vos enjeux, d'appréhender les mutations de vos métiers et d'anticiper les innovations sectorielles. Nos consultants maîtrisent les codes et spécificités de vos marchés.",
     expertises: [
       "Carrière", "Consulting", "Digital", "Data & IA", "Executive", "Finance",

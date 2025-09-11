@@ -43,11 +43,7 @@
             Nos offres
           </h2>
         </div>
-        <!-- Filtres -->
-        <app-job-filters [availableCities]="availableCities" [availableContractTypes]="availableContractTypes"
-          (cityChanged)="onCityChanged($event)" (contractChanged)="onContractChanged($event)"
-          (searchChanged)="onSearchChanged($event)">
-        </app-job-filters>
+        
         <!-- Liste des offres -->
         <app-job-list  [companyName]="config.company.name" (jobSelected)="onJobSelected($event)">
         </app-job-list>
