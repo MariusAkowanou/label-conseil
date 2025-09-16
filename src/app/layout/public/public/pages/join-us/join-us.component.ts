@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';;
 
 // Import des composants
 import { CompanyStatsComponent } from './components/company-stats/company-stats.component';
-import { JobFiltersComponent } from './components/job-filters/job-filters.component';
 import { JobListComponent } from './components/job-list/job-list.component';
 import { SeoService } from '../../../../../shared/services/local/seo.service';
 
@@ -15,7 +14,6 @@ import { SeoService } from '../../../../../shared/services/local/seo.service';
   imports: [
     RouterModule,
     CompanyStatsComponent,
-    JobFiltersComponent,
     JobListComponent
   ],
   templateUrl: './join-us.component.html',
