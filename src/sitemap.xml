@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Pages statiques -->
+  <url><loc>https://www.labelconseils.org/</loc></url>
+  <url><loc>https://www.labelconseils.org/qui-sommes-nous</loc></url>
+  <url><loc>https://www.labelconseils.org/contact</loc></url>
+  <url><loc>https://www.labelconseils.org/accompagnements/experience</loc></url>
+  <url><loc>https://www.labelconseils.org/nous-rejoindre</loc></url>
+
+  <!-- Expertises dynamiques (slugs depuis expertises.config.json) -->
+  <url><loc>https://www.labelconseils.org/expertises/carriere</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/consulting</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/digital</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/strategies-territoires</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/services-economiques-financiers</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/productivite-humaine</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/conseil-juridique</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/expertise-rurale</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/etudes-sectorielles</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/strategie-entreprise</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/service-marketing</loc></url>
+  <url><loc>https://www.labelconseils.org/expertises/gestion-systemes-information</loc></url>
+
+  <!-- Offres (IDs statiques actuels) -->
+  <url><loc>https://www.labelconseils.org/nous-rejoindre/1</loc></url>
+  <url><loc>https://www.labelconseils.org/nous-rejoindre/2</loc></url>
+  <url><loc>https://www.labelconseils.org/nous-rejoindre/3</loc></url>
+</urlset>
+
