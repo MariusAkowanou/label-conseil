@@ -174,7 +174,7 @@ export class HomeComponent implements OnInit {
       { name: "Tanguiéta", logo: "/assets/images/partenaire_clients/Tanguiéta.png" },
       { name: "Tchaourou", logo: "/assets/images/partenaire_clients/tchaourou.jpg" },
       { name: "TECHNOSERVE", logo: "/assets/images/partenaire_clients/TECHNOSERVE.png" },
-      { name: "Toffo", logo: "/assets/images/partenaire_clients/toffo.jSOSCIVISMEpg" },
+      { name: "Toffo", logo: "/assets/images/partenaire_clients/toffo.jpg" },
       { name: "TOUCOUNTOUNA", logo: "/assets/images/partenaire_clients/TOUCOUNTOUNA.jpg" },
       { name: "Toviklin", logo: "/assets/images/partenaire_clients/toviklin.jpg" },
       { name: "TRANFORME", logo: "/assets/images/partenaire_clients/TRANFORME.png" },
