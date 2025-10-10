@@ -96,7 +96,7 @@ export class HomeComponent implements OnInit {
   partnersData = {
     title: "Ils nous font confiance",
     partners: [
-      {name:"Smart Pilote", logo: "/assets/images/partenaire_clients/Smartpilote.jpg"},
+      { name: "Smart Pilote", logo: "/assets/images/partenaire_clients/Smartpilote.jpg" },
       { name: "ACAD", logo: "/assets/images/partenaire_clients/ACAD.png" },
       { name: "Access", logo: "/assets/images/partenaire_clients/Access.jpg" },
       { name: "ADECOB", logo: "/assets/images/partenaire_clients/ADECOB.png" },
@@ -189,12 +189,40 @@ export class HomeComponent implements OnInit {
     ]
   };
 
+  // Variables pour le carousel des partenaires
+  currentPartnerIndex = 0;
+  partnerGroups: any[] = [];
+  partnersPerSlide = 8; // Nombre de logos par slide
+
   ngOnInit() {
     this.seo.setHomePage();
+    this.initializePartnerCarousel();
 
     if (isPlatformBrowser(this.platformId)) {
       this.setupScrollAnimations();
     }
+  }
+
+  private initializePartnerCarousel() {
+    // Diviser les partenaires en groupes pour le carousel
+    this.partnerGroups = [];
+    for (let i = 0; i < this.partnersData.partners.length; i += this.partnersPerSlide) {
+      this.partnerGroups.push(this.partnersData.partners.slice(i, i + this.partnersPerSlide));
+    }
+  }
+
+  nextPartners() {
+    this.currentPartnerIndex = (this.currentPartnerIndex + 1) % this.partnerGroups.length;
+  }
+
+  previousPartners() {
+    this.currentPartnerIndex = this.currentPartnerIndex === 0
+      ? this.partnerGroups.length - 1
+      : this.currentPartnerIndex - 1;
+  }
+
+  goToPartnerSlide(index: number) {
+    this.currentPartnerIndex = index;
   }
   private setupScrollAnimations() {
     const observer = new IntersectionObserver(

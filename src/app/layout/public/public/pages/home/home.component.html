@@ -19,7 +19,7 @@
 
                     <div class="space-y-3 ">
                         <h1 class="hero-title text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                            {{ heroData.subtitle }} 
+                            {{ heroData.subtitle }}
                             <span class="text-primary-600 block ">{{ heroData.mainTitle }}</span>
                         </h1>
                         <div>
@@ -31,12 +31,13 @@
                             </p>
                             <p class="text-sm sm:text-base text-gray-700">
                                 Grâce à ses {{ heroData.stats.expertises }} expertises et un réseau de plus de
-                                <span class="text-primary-600 font-semibold">{{ heroData.stats.clients }} clients</span>,
+                                <span class="text-primary-600 font-semibold">{{ heroData.stats.clients }}
+                                    clients</span>,
                                 Label Conseils vous accompagne vers l'excellence.
                             </p>
 
                         </div>
-                       
+
                     </div>
 
 
@@ -137,7 +138,7 @@
 
                 <!-- Illustration -->
                 <div class="relative animate-on-scroll animate-on-scroll-delay-300" data-section="expertise">
-                   <img src="assets/images/hero.png" alt="Expertise" class="w-full h-full object-cover">
+                    <img src="assets/images/hero.png" alt="Expertise" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
@@ -194,15 +195,54 @@
                     {{ partnersData.title }}
                 </h2>
 
-                <!-- Grille des logos partenaires -->
-                <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-4 lg:gap-6 items-center">
-                    @for (partner of partnersData.partners; track partner.name; let i = $index) {
-                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-soft hover:shadow-medium transition-all duration-300 h-16 sm:h-18 partner-logo animate-on-scroll"
-                        [class]="'animate-on-scroll-delay-' + ((i % 6) * 50)">
-                        <img [src]="partner.logo" [alt]="partner.name" class="max-w-full max-h-full object-contain"
-                            loading="lazy">
+                <!-- Carousel des logos partenaires -->
+                <div class="relative">
+                    <!-- Boutons de navigation -->
+                    <button (click)="previousPartners()"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-300 opacity-80 hover:opacity-100">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <button (click)="nextPartners()"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg hover:shadow-xl transition-all duration-300 opacity-80 hover:opacity-100">
+                        <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <!-- Container du carousel -->
+                    <div class="overflow-hidden mx-12">
+                        <div class="flex transition-transform duration-500 ease-in-out"
+                            [style.transform]="'translateX(-' + (currentPartnerIndex * 100) + '%)'">
+                            @for (partnerGroup of partnerGroups; track $index) {
+                            <div class="w-full flex-shrink-0">
+                                <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 lg:gap-6 items-center">
+                                    @for (partner of partnerGroup; track partner.name; let i = $index) {
+                                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-soft hover:shadow-medium transition-all duration-300 h-16 sm:h-18 partner-logo animate-on-scroll"
+                                        [class]="'animate-on-scroll-delay-' + ((i % 6) * 50)">
+                                        <img [src]="partner.logo" [alt]="partner.name"
+                                            class="max-w-full max-h-full object-contain" loading="lazy">
+                                    </div>
+                                    }
+                                </div>
+                            </div>
+                            }
+                        </div>
                     </div>
-                    }
+
+                    <!-- Indicateurs de pagination -->
+                    <div class="flex justify-center mt-6 space-x-2">
+                        @for (group of partnerGroups; track $index) {
+                        <button (click)="goToPartnerSlide($index)"
+                            class="w-2 h-2 rounded-full transition-all duration-300"
+                            [class]="$index === currentPartnerIndex ? 'bg-primary-600' : 'bg-gray-300 hover:bg-gray-400'">
+                        </button>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
