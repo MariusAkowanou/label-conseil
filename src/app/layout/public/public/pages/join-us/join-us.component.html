@@ -7,15 +7,13 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           <div class="animate-on-scroll" data-section="hero">
             <h1 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Qui sommes-nous ?
+              Rejoignez-nous ?
             </h1>
             <p class="font-body text-sm font-semibold text-primary-600 mb-4">
               Ambition matters.
             </p>
             <div class="space-y-6">
-              <p class="font-reading text-gray-700 leading-relaxed">
-                {{ config.company.description }}
-              </p>
+            
               <p class="font-reading text-gray-700 leading-relaxed">
                 Chaque jour, Label Conseils relève le défi de rendre irréprochable l'expérience de conseils.
                 En rupture avec les acteurs traditionnels, Label Conseils propose une approche du conseils unique :
@@ -28,7 +26,14 @@
               </p>
             </div>
           </div>
-          <app-company-stats [company]="config.company"></app-company-stats>
+          <div class="relative animate-on-scroll" data-section="hero">
+            <div class="relative overflow-hidden rounded-2xl">
+              <img src="/assets/images/hero.png" alt="Équipe Label Conseils en réunion - vue aérienne"
+                class="w-full h-[300px] lg:h-[400px] object-cover">
+          
+              <div class="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>-->

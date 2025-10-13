@@ -13,7 +13,7 @@ import { JobFiltersComponent } from '../job-filters/job-filters.component';
 export class JobListComponent implements OnInit {
   private jobsService = inject(JobsService);
 
-  @Input() companyName: string = '';
+  @Input() companyName: string = 'Label conseils';
 
   @Output() jobSelected = new EventEmitter<Job>();
 
