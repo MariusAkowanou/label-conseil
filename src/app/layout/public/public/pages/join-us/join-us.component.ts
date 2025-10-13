@@ -25,7 +25,7 @@ export class JoinUsComponent implements OnInit {
   private router = inject(Router);
   private platformId = inject(PLATFORM_ID);
 
-  jobsConfig = signal<any | null>(null);
+  jobsConfig = signal<any>(null);
 
   // Filtres
   selectedCity = signal<string>('all');
@@ -59,7 +59,7 @@ export class JoinUsComponent implements OnInit {
       });
   }
 
-  
+
 
   onJobSelected(job: any) {
     this.router.navigate(['/nous-rejoindre', job.id]);

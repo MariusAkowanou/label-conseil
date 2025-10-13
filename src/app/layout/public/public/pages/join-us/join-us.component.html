@@ -1,11 +1,10 @@
-@if (jobsConfig(); as config) {
+@if (jobsConfig(); as config) {}
+
   <div class="join-us-page bg-white">
-    <!-- Section Hero avec statistiques -->
+    <!-- Section Hero avec statistiques 
     <section class="py-20 lg:py-32 bg-gray-50">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Contenu principal -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          <!-- Colonne gauche -->
           <div class="animate-on-scroll" data-section="hero">
             <h1 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
               Qui sommes-nous ?
@@ -29,11 +28,10 @@
               </p>
             </div>
           </div>
-          <!-- Colonne droite - Statistiques -->
           <app-company-stats [company]="config.company"></app-company-stats>
         </div>
       </div>
-    </section>
+    </section>-->
     <!-- Section Nos Offres -->
     <section class="py-20 lg:py-32 bg-white">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,9 +43,9 @@
         </div>
         
         <!-- Liste des offres -->
-        <app-job-list  [companyName]="config.company.name" (jobSelected)="onJobSelected($event)">
+      
+        <app-job-list   (jobSelected)="onJobSelected($event)">
         </app-job-list>
       </div>
     </section>
   </div>
-}

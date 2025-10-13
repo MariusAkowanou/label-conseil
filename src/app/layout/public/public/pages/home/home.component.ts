@@ -28,8 +28,8 @@ export class HomeComponent implements OnInit {
   heroData = {
     subtitle: "Votre expert du",
     mainTitle: "conseil et accompagnement",
-    description: "Label Conseil est un cabinet de conseil spécialisé dans l'accompagnement des entreprises et des professionnels vers l'excellence.",
-    secondaryDescription: "Depuis plus de 14 ans, Label Conseil accompagne entreprises et candidats dans leur croissance et leur développement professionnel.",
+    description: "Label Conseils est un cabinet de conseil spécialisé dans l'accompagnement des entreprises et des professionnels vers l'excellence.",
+    secondaryDescription: "Depuis 2010, Label Conseils accompagne entreprises et candidats dans leur croissance et leur développement professionnel.",
     stats: {
       experience: "10+",
       clients: "500+",
