@@ -12,296 +12,25 @@
         </div>
     </section>
 
-    <!-- Onglets -->
-    <section class="py-8 bg-white border-b border-gray-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap justify-center gap-2">
-
-                <button (click)="setActiveForm('recruiter')"
-                    class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300"
-                    [class.bg-primary-600]="activeForm() === 'recruiter'"
-                    [class.text-white]="activeForm() === 'recruiter'"
-                    [class.text-gray-600]="activeForm() !== 'recruiter'"
-                    [class.hover:bg-primary-50]="activeForm() !== 'recruiter'">
-                    Recruter
-                </button>
-
-                <button (click)="setActiveForm('join')"
-                    class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300"
-                    [class.bg-primary-600]="activeForm() === 'join'" [class.text-white]="activeForm() === 'join'"
-                    [class.text-gray-600]="activeForm() !== 'join'"
-                    [class.hover:bg-primary-50]="activeForm() !== 'join'">
-                    Nous rejoindre
-                </button>
-
-                <button (click)="setActiveForm('evolve')"
-                    class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300"
-                    [class.bg-primary-600]="activeForm() === 'evolve'" [class.text-white]="activeForm() === 'evolve'"
-                    [class.text-gray-600]="activeForm() !== 'evolve'"
-                    [class.hover:bg-primary-50]="activeForm() !== 'evolve'">
-                    Évoluer
-                </button>
-
-                <button (click)="setActiveForm('career')"
-                    class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300"
-                    [class.bg-primary-600]="activeForm() === 'career'" [class.text-white]="activeForm() === 'career'"
-                    [class.text-gray-600]="activeForm() !== 'career'"
-                    [class.hover:bg-primary-50]="activeForm() !== 'career'">
-                    Label Conseils Carrière
-                </button>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Formulaires -->
     <section class="py-12 lg:py-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- Formulaire Recruter -->
-            @if (activeForm() === 'recruiter') {
             <div class="animate-fade-in">
                 <div class="mb-8">
                     <h2 class="font-heading text-2xl font-bold text-gray-900 mb-4">
-                        Vous avez pour projet de recruter un collaborateur ?
+                        Label Conseils contact
                     </h2>
                     <p class="font-reading text-gray-600">
-                        Prenons le temps d'en discuter. Nos responsables de cabinet seront ravis de vous informer sur
-                        nos modalités de fonctionnement et de vous préciser si nous sommes capables de trouver la bonne
-                        personne pour vous.
+                       Contactez nous pour avoir plus d'information sur comment nous pouvons vous accompagné au mieux .
                     </p>
                     <p class="text-sm text-gray-500 mt-4">Les champs marqués d'un * sont obligatoires</p>
                 </div>
-
-                <form [formGroup]="recruiterForm" (ngSubmit)="onSubmit('recruiter')" class="space-y-6">
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Prénom & Nom *
-                        </label>
-                        <input type="text" formControlName="name"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Société *
-                        </label>
-                        <input type="text" formControlName="company"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Numéro de téléphone *
-                        </label>
-                        <input type="tel" formControlName="phone"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Adresse email *
-                        </label>
-                        <input type="email" formControlName="email"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Message *
-                        </label>
-                        <textarea formControlName="message" rows="4"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"></textarea>
-                    </div>
-
-                    <button type="submit" [disabled]="isSubmitting()"
-                        class="w-full bg-primary-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300">
-                        @if (isSubmitting()) {
-                        <i class="fas fa-spinner fa-spin mr-2"></i>
-                        Envoi en cours...
-                        } @else {
-                        Envoyer ma demande
-                        }
-                    </button>
-                </form>
-            </div>
-            }
-
-            <!-- Formulaire Nous rejoindre -->
-            @if (activeForm() === 'join') {
-            <div class="animate-fade-in">
-                <div class="mb-8">
-                    <h2 class="font-heading text-2xl font-bold text-gray-900 mb-4">
-                        Nous sommes constamment à la recherche de nouveaux Talents.
-                    </h2>
-                    <p class="font-reading text-gray-600">
-                        Si vous avez été séduit par l'état d'esprit Label Conseils, nous serons ravis de vous en dire
-                        plus.
-                    </p>
-                    <p class="text-sm text-gray-500 mt-4">Les champs marqués d'un * sont obligatoires</p>
-                </div>
-
-                <form [formGroup]="joinForm" (ngSubmit)="onSubmit('join')" class="space-y-6">
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Prénom, Nom *
-                        </label>
-                        <input type="text" formControlName="name"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Adresse email *
-                        </label>
-                        <input type="email" formControlName="email"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Message *
-                        </label>
-                        <textarea formControlName="message" rows="4"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"></textarea>
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            CV
-                        </label>
-                        <input type="file" (change)="onFileChange($event, 'join')" accept=".pdf,.doc,.docx"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-medium file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100">
-                    </div>
-
-                    <button type="submit" [disabled]="isSubmitting()"
-                        class="w-full bg-primary-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300">
-                        @if (isSubmitting()) {
-                        <i class="fas fa-spinner fa-spin mr-2"></i>
-                        Envoi en cours...
-                        } @else {
-                        Envoyer ma candidature
-                        }
-                    </button>
-                </form>
-            </div>
-            }
-
-            <!-- Formulaire Évoluer -->
-            @if (activeForm() === 'evolve') {
-            <div class="animate-fade-in">
-                <div class="mb-8">
-                    <h2 class="font-heading text-2xl font-bold text-gray-900 mb-4">
-                        Conseils carrière, modalités de fonctionnement, nos postes ouverts... ?
-                    </h2>
-                    <p class="font-reading text-gray-600">
-                        N'hésitez pas à prendre contact avec Label Conseils !
-                    </p>
-                    <p class="text-sm text-gray-500 mt-4">Les champs marqués d'un * sont obligatoires</p>
-                </div>
-
-                <form [formGroup]="evolveForm" (ngSubmit)="onSubmit('evolve')" class="space-y-6">
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            L'opportunité pour laquelle vous postulez *
-                        </label>
-                        <input type="text" formControlName="opportunity"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Quelle est votre expertise ? *
-                        </label>
-                        <select formControlName="expertise"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                            <option value="">Sélectionnez votre expertise</option>
-                            @for (expertise of expertises; track expertise) {
-                            <option [value]="expertise">{{ expertise }}</option>
-                            }
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Votre nom et prénom *
-                        </label>
-                        <input type="text" formControlName="name"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Votre adresse email *
-                        </label>
-                        <input type="email" formControlName="email"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Votre numéro de téléphone *
-                        </label>
-                        <input type="tel" formControlName="phone"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Le lien de votre profil LinkedIn *
-                        </label>
-                        <input type="url" formControlName="linkedin" placeholder="https://linkedin.com/in/votre-profil"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Votre CV
-                        </label>
-                        <input type="file" (change)="onFileChange($event, 'evolve')" accept=".pdf,.doc,.docx"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-medium file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100">
-                    </div>
-
-                    <div>
-                        <label class="block font-body text-sm font-medium text-gray-700 mb-2">
-                            Un commentaire ? Une information à nous communiquer ?
-                        </label>
-                        <textarea formControlName="comment" rows="3"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"></textarea>
-                    </div>
-
-                    <button type="submit" [disabled]="isSubmitting()"
-                        class="w-full bg-primary-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300">
-                        @if (isSubmitting()) {
-                        <i class="fas fa-spinner fa-spin mr-2"></i>
-                        Envoi en cours...
-                        } @else {
-                        Envoyer ma demande
-                        }
-                    </button>
-                </form>
-            </div>
-            }
-
-            <!-- Formulaire Label Conseil Carrière -->
-            @if (activeForm() === 'career') {
-            <div class="animate-fade-in">
-                <div class="mb-8">
-                    <h2 class="font-heading text-2xl font-bold text-gray-900 mb-4">
-                        Label Conseils Carrière
-                    </h2>
-                    <p class="font-reading text-gray-600">
-                        Label Conseils Carrière est l'activité dédiée à l'accompagnement des cadres et dirigeants en
-                        transition professionnelle (outplacement, bilan de compétences & coaching). Pour vous proposer
-                        un accompagnement répondant à vos ambitions, merci de compléter le formulaire ci-dessous.
-                    </p>
-                    <p class="text-sm text-gray-500 mt-4">Les champs marqués d'un * sont obligatoires</p>
-                </div>
-
+            
                 <form [formGroup]="careerForm" (ngSubmit)="onSubmit('career')" class="space-y-6">
-
+            
                     <div>
                         <label class="block font-body text-sm font-medium text-gray-700 mb-3">
                             Vous nous contactez en tant que… *
@@ -320,13 +49,18 @@
                                     ou en outplacement)</span>
                             </label>
                             <label class="flex items-center">
+                                <input type="radio" formControlName="contactType" value="institution"
+                                    class="w-4 h-4 text-primary-600 border-gray-300 focus:ring-primary-500">
+                                <span class="ml-2 text-sm text-gray-700">Institution</span>
+                            </label>
+                            <label class="flex items-center">
                                 <input type="radio" formControlName="contactType" value="other"
                                     class="w-4 h-4 text-primary-600 border-gray-300 focus:ring-primary-500">
                                 <span class="ml-2 text-sm text-gray-700">Autre (partenaire, presse, etc.)</span>
                             </label>
                         </div>
                     </div>
-
+            
                     <div>
                         <label class="block font-body text-sm font-medium text-gray-700 mb-2">
                             Prénom, Nom *
@@ -334,7 +68,7 @@
                         <input type="text" formControlName="name"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                     </div>
-
+            
                     <div>
                         <label class="block font-body text-sm font-medium text-gray-700 mb-2">
                             Adresse email *
@@ -342,7 +76,7 @@
                         <input type="email" formControlName="email"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                     </div>
-
+            
                     <div>
                         <label class="block font-body text-sm font-medium text-gray-700 mb-2">
                             Numéro de téléphone
@@ -350,7 +84,7 @@
                         <input type="tel" formControlName="phone"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                     </div>
-
+            
                     <div>
                         <label class="block font-body text-sm font-medium text-gray-700 mb-2">
                             Fonction actuelle
@@ -358,7 +92,7 @@
                         <input type="text" formControlName="currentPosition"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                     </div>
-
+            
                     <div>
                         <label class="block font-body text-sm font-medium text-gray-700 mb-2">
                             Société
@@ -366,7 +100,7 @@
                         <input type="text" formControlName="company"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                     </div>
-
+            
                     <div>
                         <label class="block font-body text-sm font-medium text-gray-700 mb-3">
                             Quel est l'objet principal de votre demande ? *
@@ -381,7 +115,7 @@
                             }
                         </div>
                     </div>
-
+            
                     <div>
                         <label class="block font-body text-sm font-medium text-gray-700 mb-2">
                             Détaillez votre besoin en quelques mots *
@@ -389,7 +123,7 @@
                         <textarea formControlName="details" rows="4"
                             class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"></textarea>
                     </div>
-
+            
                     <button type="submit" [disabled]="isSubmitting()"
                         class="w-full bg-primary-600 text-white font-medium py-3 px-6 rounded-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-300">
                         @if (isSubmitting()) {
@@ -401,7 +135,7 @@
                     </button>
                 </form>
             </div>
-            }
+      
         </div>
     </section>
 </div>

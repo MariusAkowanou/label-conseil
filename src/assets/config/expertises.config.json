@@ -7,7 +7,7 @@
       "tagline": "Votre spécialiste des profils issus du monde du conseil et de l'accompagnement",
       "heroImage": "/assets/images/hero.png",
       "description": "Première activité développée par le cabinet, Label Conseils Carrière accompagne les cabinets de conseil et les entreprises dans le recrutement de profils issus du monde du conseil et de l'accompagnement.",
-      "detailedDescription": "Les consultants en recrutement spécialisés de Label Conseils Carrière réalisent plus de 150 recrutements par an en accompagnant tous les types d'interlocuteurs : cabinets de conseil, startups, ETI et entreprises du CAC 40.",
+      "detailedDescription": "",
       "marketContext": {
         "title": "Un marché en mouvement perpétuel",
         "content": "Les cabinets de conseil sont passés maîtres dans le fait d'anticiper les tendances et d'adapter leurs offres pour être au plus proche des besoins de leurs clients. Les cabinets spécialisent de plus en plus leurs consultants pour rester en amont des tendances et se différencier sur un marché fortement concurrentiel."
@@ -130,7 +130,7 @@
       "slug": "strategies-territoires",
       "name": "Stratégies de Territoires",
       "tagline": "Expertise en développement territorial et concertation multi-acteurs",
-      "heroImage": "/assets/images/expertises/territoires-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Accompagnement spécialisé des collectivités et organisations dans l'élaboration et la mise en œuvre de stratégies territoriales durables.",
       "detailedDescription": "Notre équipe d'experts intervient auprès des collectivités locales, des établissements publics et des organisations territoriales pour concevoir et déployer des stratégies de développement adaptées aux enjeux locaux.",
       "marketContext": {
@@ -172,7 +172,7 @@
       "slug": "services-economiques-financiers",
       "name": "Services Économiques et Financiers",
       "tagline": "Expertise complète en gestion financière et développement économique",
-      "heroImage": "/assets/images/expertises/economie-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Accompagnement global des entreprises dans leur développement économique, de la création à la restructuration, en passant par la recherche de financement.",
       "detailedDescription": "Nos consultants financiers et économistes accompagnent les entreprises à tous les stades de leur développement, depuis l'étude de faisabilité jusqu'à la restructuration, en passant par l'optimisation de la gestion financière.",
       "marketContext": {
@@ -214,7 +214,7 @@
       "slug": "productivite-humaine",
       "name": " Gestion de la Productivité Humaine",
       "tagline": "Excellence en gestion des ressources humaines et développement organisationnel",
-      "heroImage": "/assets/images/expertises/rh-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Expertise complète en gestion des ressources humaines, du recrutement au développement des compétences, en passant par l'optimisation organisationnelle.",
       "detailedDescription": "Notre équipe RH accompagne les entreprises dans toutes les dimensions de la gestion humaine : recrutement, formation, évaluation, rémunération et gestion stratégique des talents.",
       "marketContext": {
@@ -256,7 +256,7 @@
       "slug": "conseil-juridique",
       "name": "Conseil Juridique",
       "tagline": "Expertise juridique complète pour entreprises et particuliers",
-      "heroImage": "/assets/images/expertises/juridique-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Accompagnement juridique complet des entreprises et particuliers, de la consultation à l'assistance dans les procédures complexes.",
       "detailedDescription": "Notre équipe d'experts juridiques intervient dans tous les domaines du droit des affaires : création d'entreprise, contrats, liquidation, recouvrement et conseil en assurance.",
       "marketContext": {
@@ -298,7 +298,7 @@
       "slug": "expertise-rurale",
       "name": "Expertise Rurale",
       "tagline": "Spécialisation en développement rural et économie villageoise",
-      "heroImage": "/assets/images/expertises/rural-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Expertise dédiée au développement rural, à l'animation de projets villageois et à l'organisation du milieu rural dans une approche participative.",
       "detailedDescription": "Nos experts ruraux accompagnent les communautés villageoises, les ONG et les collectivités dans le développement de projets ruraux durables, l'organisation de groupements et la structuration du milieu rural.",
       "marketContext": {
@@ -340,7 +340,7 @@
       "slug": "etudes-sectorielles",
       "name": "Études Sectorielles",
       "tagline": "Analyses approfondies des filières économiques et bassins régionaux",
-      "heroImage": "/assets/images/expertises/etudes-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Réalisation d'études sectorielles approfondies, d'analyses de filières économiques et de monographies régionales pour éclairer les décisions stratégiques.",
       "detailedDescription": "Notre équipe d'analystes sectoriels produit des études de marché, des analyses de filières et des diagnostics territoriaux pour accompagner les décideurs dans leur compréhension des enjeux économiques.",
       "marketContext": {
@@ -382,7 +382,7 @@
       "slug": "expertise-sociale",
       "name": "Expertise Sociale",
       "tagline": "Spécialisation en politiques sociales et approches participatives",
-      "heroImage": "/assets/images/expertises/social-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Expertise en études sociales, politiques de l'emploi et approches participatives avec une attention particulière aux enjeux de genre et de développement.",
       "detailedDescription": "Nos experts sociaux conduisent des études sur l'emploi, la pauvreté et les inégalités, tout en développant des approches participatives et des politiques sociales inclusives.",
       "marketContext": {
@@ -424,7 +424,7 @@
       "slug": "strategies-entreprise",
       "name": "Stratégies d'Entreprise",
       "tagline": "Excellence en stratégie et management d'entreprise",
-      "heroImage": "/assets/images/expertises/strategie-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Accompagnement stratégique complet des entreprises : stratégie marketing, organisationnelle, financière et planification stratégique.",
       "detailedDescription": "Notre équipe de consultants en stratégie accompagne les dirigeants dans l'élaboration et la mise en œuvre de leurs stratégies d'entreprise, du diagnostic à l'implémentation.",
       "marketContext": {
@@ -466,7 +466,7 @@
       "slug": "service-marketing",
       "name": "Service Marketing",
       "tagline": "Expertise marketing complète de l'étude à la mise en marché",
-      "heroImage": "/assets/images/expertises/marketing-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Services marketing complets : études de marché, communication, distribution et développement commercial pour optimiser votre présence marché.",
       "detailedDescription": "Notre équipe marketing accompagne les entreprises dans toutes les dimensions du marketing : étude de marché, stratégie de communication, développement des réseaux de distribution et optimisation des services clients.",
       "marketContext": {
@@ -508,7 +508,7 @@
       "slug": "assistance-gestion",
       "name": "Assistance en Gestion",
       "tagline": "Expertise comptable et financière pour optimiser votre gestion",
-      "heroImage": "/assets/images/expertises/gestion-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Accompagnement complet en gestion comptable et financière : révision des comptes, organisation comptable et comptabilité de gestion.",
       "detailedDescription": "Nos experts-comptables et conseillers en gestion accompagnent les entreprises dans l'optimisation de leur gestion comptable et financière, de l'organisation des processus à l'analyse des coûts.",
       "marketContext": {
@@ -550,7 +550,7 @@
       "slug": "gestion-systemes-information",
       "name": "Gestion de l'Information et des Systèmes",
       "tagline": "Excellence en systèmes d'information et transformation digitale",
-      "heroImage": "/assets/images/expertises/si-hero.jpg",
+      "heroImage": "/assets/images/hero.png",
       "description": "Expertise complète en systèmes d'information : conception, développement, sécurité et administration pour optimiser votre infrastructure IT.",
       "detailedDescription": "Notre équipe d'experts IT accompagne les entreprises dans la conception, le développement et la gestion de leurs systèmes d'information avec une approche globale de la transformation digitale.",
       "marketContext": {

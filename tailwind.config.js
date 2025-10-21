@@ -17,18 +17,18 @@ module.exports = {
           100: '#fce7f3',
           200: '#fbcfe8',
           300: '#f9a8d4',
-          400: '#f472b6',
-          500: '#ec4899', // Couleur principale
-          600: '#db2777',
-          700: '#be185d',
-          800: '#9d174d',
+          400: '#e2231a',
+          500: '#e2231a', // Couleur principale
+          600: '#e2231a',
+          700: '#e2231a',
+          800: '#e2231a',
           900: '#831843',
           950: '#500724',
         },
         // Couleurs personnalisées pour le site
-        'rose-primary': '#ec4899',
-        'rose-light': '#f472b6',
-        'rose-dark': '#db2777',
+        'rose-primary': '#e2231a',
+        'rose-light': '#e2231a',
+        'rose-dark': '#e2231a',
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(236, 72, 153, 0.07), 0 10px 20px -2px rgba(236, 72, 153, 0.04)',

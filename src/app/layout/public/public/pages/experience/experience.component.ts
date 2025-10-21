@@ -21,6 +21,28 @@ export class ExperienceComponent implements OnInit {
     description: "Sur un marché du conseils encore dominé par les grands acteurs généralistes, Label Conseil propose une alternative résolument différente à la structure agile et aux processus centrés sur l'expertise, l'excellence, l'humain et la dimension conseils."
   };
 
+  cardsData = {
+    title: "Nos expériences",
+    subtitle: "Des missions réussies qui témoignent de notre expertise",
+    cards: [
+      {
+        image: "/assets/images/hero.png",
+        title: "Transformation digitale",
+        description: "Accompagnement d'une PME du secteur industriel dans sa transformation digitale : recrutement de 15 profils IT spécialisés, mise en place d'une équipe data science et intégration réussie de nouveaux talents."
+      },
+      {
+        image: "/assets/images/hero.png",
+        title: "Expansion internationale",
+        description: "Mission de recrutement pour l'ouverture d'une filiale européenne : identification et recrutement de 8 dirigeants locaux, création d'une équipe commerciale internationale et accompagnement sur 18 mois."
+      },
+      {
+        image: "/assets/images/hero.png",
+        title: "Restructuration stratégique",
+        description: "Conseil en recrutement pour une restructuration majeure : recrutement de 25 cadres dirigeants, accompagnement des équipes existantes et mise en place d'une nouvelle organisation opérationnelle."
+      }
+    ]
+  };
+
   processData = {
     title: "Co-construire la mission avec vous",
     subtitle: "Stratégie de recherche co-construite, confidentialité assurée, reportings fréquents : nous vous proposons une approche méthodique et sur-mesure pour chacune de nos missions, vous assurant une expérience client inégalée.",
@@ -52,19 +74,12 @@ export class ExperienceComponent implements OnInit {
         icon: "fas fa-file-contract",
         description: "Notre position d'intermédiaire facilite les négociations avec les candidats retenus. Nous réalisons un rapport complet à l'issue de la mission si vous souhaitez obtenir des données précises sur votre image de marque, les salaires pratiqués, les retours des candidats en process...",
         continuationText: ""
-      },
-      {
-        number: "05",
-        title: "La phase de follow-up",
-        icon: "fas fa-handshake",
-        description: "Nous veillons à la bonne intégration du candidat en suivant les premiers mois de sa prise de poste. En cas de mismatch, nous reprenons à nos frais la recherche d'un nouveau candidat.",
-        continuationText: ""
       }
     ]
   };
 
   commitmentsData = {
-    title: "Nos engagements candidats :",
+    title: "Nos engagements  :",
     commitments: [
       {
         title: "Déontologie et satisfaction",

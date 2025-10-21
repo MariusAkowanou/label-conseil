@@ -1,25 +1,21 @@
 <div class="experience-page bg-white">
 
-    <!-- Section Hero -->
+    <!-- Section Hero
     <section class="min-h-screen flex items-center bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
-                <!-- Image à gauche -->
                 <div class="relative animate-on-scroll" data-section="hero">
                     <div class="relative overflow-hidden rounded-2xl">
                         <img src="/assets/images/hero.png" alt="L'expérience Label Conseils"
                             class="w-full h-[500px] lg:h-[600px] object-cover filter grayscale">
 
-                        <!-- Overlay subtil -->
                         <div class="absolute inset-0 bg-gradient-to-tr from-black/10 to-transparent"></div>
                     </div>
                 </div>
 
-                <!-- Contenu texte à droite -->
                 <div class="space-y-8 animate-on-scroll animate-on-scroll-delay-200" data-section="hero">
 
-                    <!-- Surtitre et titre -->
                     <div class="space-y-6">
                         <span class="font-body text-sm font-semibold text-primary-600 uppercase tracking-wider">
                             {{ heroData.tagline }}
@@ -30,7 +26,6 @@
                         </h1>
                     </div>
 
-                    <!-- Icône LinkedIn -->
                     <div class="flex items-center">
                         <a href="https://linkedin.com/company/label-conseil" target="_blank" rel="noopener noreferrer"
                             class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition-all duration-300 shadow-medium hover:shadow-strong group">
@@ -39,13 +34,54 @@
                         </a>
                     </div>
 
-                    <!-- Description -->
                     <div class="space-y-6">
                         <p class="font-reading text-base text-gray-700 leading-relaxed">
                             {{ heroData.description }}
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Section Cartes Valeurs -->
+    <section class="py-16 lg:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Titre et sous-titre -->
+            <div class="text-center mb-16 animate-on-scroll" data-section="cards">
+                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                    {{ cardsData.title }}
+                </h2>
+                <p class="font-reading text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    {{ cardsData.subtitle }}
+                </p>
+            </div>
+
+            <!-- Grille des cartes -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                @for (card of cardsData.cards; track card.title; let i = $index) {
+                <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 animate-on-scroll group"
+                    [style.animation-delay]="(i * 200) + 'ms'" data-section="cards">
+
+                    <!-- Image -->
+                    <div class="relative h-48 overflow-hidden">
+                        <img [src]="card.image" [alt]="card.title"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+
+                    <!-- Contenu -->
+                    <div class="p-8">
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mb-4">
+                            {{ card.title }}
+                        </h3>
+                        <p class="font-reading text-sm text-gray-600 leading-relaxed">
+                            {{ card.description }}
+                        </p>
+                    </div>
+                </div>
+                }
             </div>
         </div>
     </section>
@@ -167,7 +203,7 @@
 </section>
 
 <!-- Call-to-Action -->
-<section class="py-20 bg-primary-600">
+<section class="py-20 bg-gray-600">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="space-y-8 animate-on-scroll" data-section="cta">
 
@@ -185,10 +221,7 @@
                     Nous contacter
                 </a>
 
-                <a routerLink="/expertises"
-                    class="font-heading inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-primary-600 transition-all duration-300">
-                    Nos expertises
-                </a>
+
             </div>
         </div>
     </div>

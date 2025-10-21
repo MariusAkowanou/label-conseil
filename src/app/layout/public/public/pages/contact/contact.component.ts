@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
   private fb = inject(FormBuilder);
   private contactService = inject(ContactService);
 
-  activeForm = signal<'recruiter' | 'join' | 'evolve' | 'career'>('recruiter');
+  //activeForm = signal<'recruiter' | 'join' | 'evolve' | 'career'>('recruiter');
   isSubmitting = signal(false);
 
   // Formulaires
@@ -61,35 +61,6 @@ export class ContactComponent implements OnInit {
   }
 
   private initializeForms() {
-    // Formulaire Recruteur
-    this.recruiterForm = this.fb.group({
-      name: ['', Validators.required],
-      company: ['', Validators.required],
-      phone: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
-    });
-
-    // Formulaire Nous rejoindre
-    this.joinForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required],
-      cv: [null]
-    });
-
-    // Formulaire Évoluer
-    this.evolveForm = this.fb.group({
-      opportunity: ['', Validators.required],
-      expertise: ['', Validators.required],
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      linkedin: ['', Validators.required],
-      cv: [null],
-      comment: ['']
-    });
-
     // Formulaire Carrière
     this.careerForm = this.fb.group({
       contactType: ['', Validators.required],
@@ -103,9 +74,9 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  setActiveForm(form: 'recruiter' | 'join' | 'evolve' | 'career') {
+  /*setActiveForm(form: 'recruiter' | 'join' | 'evolve' | 'career') {
     this.activeForm.set(form);
-  }
+  }*/
 
   onFileChange(event: any, formName: string) {
     const file = event.target.files[0];
@@ -121,18 +92,9 @@ export class ContactComponent implements OnInit {
   onSubmit(formType: string) {
     this.isSubmitting.set(true);
 
-    let form: FormGroup;
-    switch (formType) {
-      case 'recruiter': form = this.recruiterForm; break;
-      case 'join': form = this.joinForm; break;
-      case 'evolve': form = this.evolveForm; break;
-      case 'career': form = this.careerForm; break;
-      default: return;
-    }
-
-    if (form.valid) {
+    if (this.careerForm.valid) {
       // Préparer les données pour l'API
-      const formData = form.value;
+      const formData = this.careerForm.value;
       const contactData: ContactData = {
         ...formData,
         contactType: formType as 'recruiter' | 'join' | 'evolve' | 'career'
@@ -144,7 +106,7 @@ export class ContactComponent implements OnInit {
           console.log('Contact envoyé avec succès:', response);
           this.isSubmitting.set(false);
           alert('Formulaire envoyé avec succès !');
-          form.reset();
+          this.careerForm.reset();
         },
         error: (error) => {
           console.error('Erreur lors de l\'envoi:', error);

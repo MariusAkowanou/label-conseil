@@ -84,12 +84,7 @@ export class HomeComponent implements OnInit {
         route: "/contact",
         type: "outline"
       },
-      {
-        title: "Vous souhaitez évoluer ?",
-        buttonText: "Trouvez votre expert",
-        route: "/expertises",
-        type: "filled"
-      }
+      
     ]
   };
 

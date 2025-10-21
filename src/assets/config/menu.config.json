@@ -102,7 +102,7 @@
       ]
     },
     {
-      "label": "Expérience Label Conseils",
+      "label": "Nos expériences",
       "route": "/accompagnements/experience",
       "type": "link"
     },
