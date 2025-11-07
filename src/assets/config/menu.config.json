@@ -12,94 +12,9 @@
     },
     {
       "label": "Nos expertises",
-      "type": "dropdown",
-      "icon": "fas fa-chevron-down",
-      "items": [
-        {
-          "label": "Carrière",
-          "route": "/expertises/carriere",
-          "icon": "fas fa-user-tie",
-          "description": "Développement de carrière et orientation professionnelle"
-        },
-        {
-          "label": "Consulting",
-          "route": "/expertises/consulting",
-          "icon": "fas fa-handshake",
-          "description": "Conseil stratégique et accompagnement d'entreprise"
-        },
-        {
-          "label": "Digital",
-          "route": "/expertises/digital",
-          "icon": "fas fa-laptop-code",
-          "description": "Transformation digitale et solutions numériques"
-        },
-        {
-          "label": "Stratégies de Territoires",
-          "route": "/expertises/strategies-territoires",
-          "icon": "fas fa-map-marked-alt",
-          "description": "Développement territorial et concertation"
-        },
-        {
-          "label": "Services Économiques",
-          "route": "/expertises/services-economiques-financiers",
-          "icon": "fas fa-chart-line",
-          "description": "Gestion financière et développement économique"
-        },
-        {
-          "label": "Ressources Humaines",
-          "route": "/expertises/productivite-humaine",
-          "icon": "fas fa-users",
-          "description": "Gestion RH et développement organisationnel"
-        },
-        {
-          "label": "Conseil Juridique",
-          "route": "/expertises/conseil-juridique",
-          "icon": "fas fa-gavel",
-          "description": "Expertise juridique et conseil légal"
-        },
-        {
-          "label": "Expertise Rurale",
-          "route": "/expertises/expertise-rurale",
-          "icon": "fas fa-seedling",
-          "description": "Développement rural et économie villageoise"
-        },
-        {
-          "label": "Études Sectorielles",
-          "route": "/expertises/etudes-sectorielles",
-          "icon": "fas fa-search-dollar",
-          "description": "Analyses de filières et études de marché"
-        },
-        {
-          "label": "Expertise Sociale",
-          "route": "/expertises/expertise-sociale",
-          "icon": "fas fa-heart",
-          "description": "Politiques sociales et approches participatives"
-        },
-        {
-          "label": "Stratégies d'Entreprise",
-          "route": "/expertises/strategies-entreprise",
-          "icon": "fas fa-chess-king",
-          "description": "Stratégie et management d'entreprise"
-        },
-        {
-          "label": "Marketing",
-          "route": "/expertises/service-marketing",
-          "icon": "fas fa-bullhorn",
-          "description": "Marketing et communication d'entreprise"
-        },
-        {
-          "label": "Assistance en Gestion",
-          "route": "/expertises/assistance-gestion",
-          "icon": "fas fa-calculator",
-          "description": "Comptabilité et gestion financière"
-        },
-        {
-          "label": "Systèmes d'Information",
-          "route": "/expertises/gestion-systemes-information",
-          "icon": "fas fa-server",
-          "description": "IT et transformation numérique"
-        }
-      ]
+      "type": "link",
+      "route": "/expertises"
+      
     },
     {
       "label": "Nos expériences",

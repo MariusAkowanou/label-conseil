@@ -1,6 +1,6 @@
 import { Component, OnInit, inject, signal, PLATFORM_ID, AfterViewInit } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Expertise, ExpertiseConfig } from '../../../../../shared/model/expertise.interface';
 import { SeoService } from '../../../../../shared/services/local/seo.service';
@@ -8,7 +8,7 @@ import { SeoService } from '../../../../../shared/services/local/seo.service';
 @Component({
   selector: 'app-expertise',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './expertise.component.html',
   styleUrl: './expertise.component.scss'
 })

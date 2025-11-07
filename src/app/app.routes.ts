@@ -18,6 +18,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./layout/public/public/pages/contact/contact.component').then(m => m.ContactComponent)
             },
             {
+                path: 'expertises',
+                loadComponent: () => import('./layout/public/public/pages/list-experience/list-experience.component').then(m => m.ListExperienceComponent)
+            },
+            {
                 path: 'expertises/:slug',
                 loadComponent: () => import('./layout/public/public/pages/expertise/expertise.component').then(m => m.ExpertiseComponent)
             },

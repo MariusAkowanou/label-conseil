@@ -220,7 +220,7 @@
                             <div class="w-full flex-shrink-0">
                                 <div class="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4 lg:gap-6 items-center">
                                     @for (partner of partnerGroup; track partner.name; let i = $index) {
-                                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-soft hover:shadow-medium transition-all duration-300 h-16 sm:h-18 partner-logo animate-on-scroll"
+                                    <div class="flex items-center justify-center p-4 bg-white rounded-lg shadow-soft hover:shadow-medium transition-all duration-300 h-28 sm:h-18 partner-logo animate-on-scroll"
                                         [class]="'animate-on-scroll-delay-' + ((i % 6) * 50)">
                                         <img [src]="partner.logo" [alt]="partner.name"
                                             class="max-w-full max-h-full object-contain" loading="lazy">

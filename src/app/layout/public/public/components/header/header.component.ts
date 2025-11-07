@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  @HostListener('window:resize', [])
+  @HostListener('window:resize', [])  // ✅ CORRIGÉ ICI
   onResize() {
     // Fermer le menu mobile si on revient en mode desktop
     if (window.innerWidth >= 1024) { // lg breakpoint
