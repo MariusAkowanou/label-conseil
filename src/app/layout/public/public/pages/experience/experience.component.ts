@@ -1,18 +1,24 @@
-import { Component, OnInit, inject, signal, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit, inject, signal, PLATFORM_ID, DestroyRef } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { SeoService } from '../../../../../shared/services/local/seo.service';
+import { ExperienceService, ExperienceSummary } from '../../../../../shared/services/api/experience.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss'
 })
 export class ExperienceComponent implements OnInit {
   private seo = inject(SeoService);
   private platformId = inject(PLATFORM_ID);
+  private experienceService = inject(ExperienceService);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  private destroyRef = inject(DestroyRef);
 
   // Données de la page
   heroData = {
@@ -102,6 +108,13 @@ export class ExperienceComponent implements OnInit {
     commitment: "Pour aider les candidats à révéler tout leur potentiel, nous cultivons avec eux une relation de proximité basée sur notre compréhension de leur métier et un accompagnement quotidien. En cas d'opportunité en adéquation avec votre profil, nous vous aidons à réussir les process et suivons votre prise de poste même après la période d'intégration."
   };
 
+  experiences = signal<ExperienceSummary[]>([]);
+  experienceTypes = signal<string[]>([]);
+  isLoadingExperiences = signal<boolean>(false);
+  experiencesError = signal<string | null>(null);
+  selectedThematique = signal<string | null>(null);
+  selectedType = signal<string>('all');
+
   ngOnInit() {
     this.seo.updateSeo({
       title: "L'expérience Label Conseils - Notre approche unique",
@@ -113,6 +126,88 @@ export class ExperienceComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       this.setupScrollAnimations();
     }
+
+    this.watchFilters();
+  }
+
+  watchFilters() {
+    this.route.queryParamMap
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(params => {
+        const thematique = params.get('thematique');
+        const type = params.get('type');
+        this.selectedThematique.set(thematique);
+        this.selectedType.set(type ?? 'all');
+        this.fetchExperiences();
+      });
+  }
+
+  onTypeChange(value: string) {
+    const queryParams: any = {};
+    const thematique = this.selectedThematique();
+
+    if (thematique) {
+      queryParams['thematique'] = thematique;
+    }
+
+    if (value && value !== 'all') {
+      queryParams['type'] = value;
+    }
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams,
+    });
+  }
+
+  clearThematique() {
+    const currentType = this.selectedType();
+    const queryParams: any = {};
+
+    if (currentType && currentType !== 'all') {
+      queryParams['type'] = currentType;
+    }
+
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams,
+    });
+  }
+
+  viewExperienceDetail(slug: string) {
+    this.router.navigate(['/accompagnements/experience', slug]);
+  }
+
+  private fetchExperiences() {
+    this.isLoadingExperiences.set(true);
+    this.experiencesError.set(null);
+
+    this.experienceService.getExperiences({
+      thematique: this.selectedThematique(),
+      type: this.selectedType(),
+    }).pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (data:any) => {
+          this.experiences.set(data.results);
+          this.experienceTypes.set(this.extractExperienceTypes(data.results));
+          this.isLoadingExperiences.set(false);
+        },
+        error: (error) => {
+          console.error('Erreur lors du chargement des expériences :', error);
+          this.experiencesError.set("Impossible de charger les expériences pour le moment.");
+          this.isLoadingExperiences.set(false);
+        }
+      });
+  }
+
+  private extractExperienceTypes(experiences: ExperienceSummary[]): string[] {
+    const uniqueTypes = new Set<string>();
+    experiences.forEach(exp => {
+      if (exp.type_experience) {
+        uniqueTypes.add(exp.type_experience);
+      }
+    });
+    return Array.from(uniqueTypes);
   }
 
   private setupScrollAnimations() {

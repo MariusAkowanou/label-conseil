@@ -44,59 +44,156 @@
         </div>
     </section>-->
 
-    <!-- Section Cartes Valeurs -->
-    <section class="py-16 lg:py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Liste des expériences -->
+    <section class="py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
-            <!-- Titre et sous-titre -->
-            <div class="text-center mb-16 animate-on-scroll" data-section="cards">
-                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                    {{ cardsData.title }}
-                </h2>
-                <p class="font-reading text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    {{ cardsData.subtitle }}
+            <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div class="space-y-3">
+                    <p class="font-body text-sm font-semibold text-primary-600 uppercase tracking-wider">
+                        Nos réalisations
+                    </p>
+                    <h2 class="font-heading text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                        Des expériences concrètes, mesurables et impactantes
+                    </h2>
+                    <p class="font-reading text-base text-gray-600 max-w-2xl">
+                        Parcourez nos dernières missions : chaque projet illustre l'accompagnement sur-mesure que nous
+                        mettons
+                        à disposition de nos clients pour accélérer leurs transformations.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button routerLink="/accompagnements/experience/thematiques"
+                        class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-gray-300 text-gray-900 font-medium hover:border-primary-500 hover:text-primary-600 transition-colors duration-200">
+                        <i class="fas fa-shapes text-primary-500"></i>
+                        Explorer les thématiques
+                    </button>
+
+                </div>
+            </div>
+
+            @if (selectedThematique()) {
+            <div class="flex flex-wrap items-center gap-3 rounded-2xl bg-white p-4 shadow-soft border border-gray-100">
+                <span class="font-medium text-gray-700">Thématique sélectionnée :</span>
+                <span
+                    class="inline-flex items-center gap-2 rounded-full bg-primary-50 px-4 py-2 text-sm font-semibold text-primary-700 capitalize">
+                    <i class="fas fa-tag"></i>
+                    {{ selectedThematique() }}
+                </span>
+                <button class="text-sm text-gray-500 underline hover:text-gray-900" type="button"
+                    (click)="clearThematique()">
+                    Réinitialiser
+                </button>
+            </div>
+            }
+
+            @if (experiencesError()) {
+            <div class="rounded-2xl bg-red-50 border border-red-200 p-6 text-red-700">
+                {{ experiencesError() }}
+            </div>
+            }
+
+            @if (isLoadingExperiences()) {
+            <div class="flex justify-center py-16">
+                <div class="flex items-center gap-3 text-gray-500">
+                    <span class="h-3 w-3 animate-ping rounded-full bg-primary-500"></span>
+                    Chargement des expériences...
+                </div>
+            </div>
+            } @else {
+            @if (experiences().length === 0) {
+            <div class="rounded-2xl border border-dashed border-gray-300 p-10 text-center">
+                <p class="font-heading text-xl text-gray-700 mb-3">Aucune expérience trouvée</p>
+                <p class="text-gray-500">
+                    Ajustez vos filtres ou découvrez nos différentes thématiques pour trouver la mission qui vous
+                    inspire.
                 </p>
             </div>
+            } @else {
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                @for (experience of experiences(); track experience.slug) {
+                <article
+                    class="bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-medium transition-shadow duration-200 flex flex-col">
+                    <div class="p-6 flex flex-col gap-4 flex-1">
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="inline-flex items-center gap-2 rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-700 uppercase tracking-wide">
+                                    <i class="fas fa-diagram-project text-xs"></i>
+                                    {{ experience.type_experience }}
+                                </span>
+                                <span
+                                    class="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 text-xs font-semibold text-gray-700 capitalize">
+                                    <i class="fas fa-layer-group text-xs"></i>
+                                    {{ experience.thematique }}
+                                </span>
+                            </div>
+                            <span class="text-xs text-gray-500">
+                                {{ experience.nombre_competences }} compétences mobilisées
+                            </span>
+                        </div>
 
-            <!-- Grille des cartes -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-                @for (card of cardsData.cards; track card.title; let i = $index) {
-                <div class="bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300 animate-on-scroll group"
-                    [style.animation-delay]="(i * 200) + 'ms'" data-section="cards">
+                        <div class="space-y-3">
+                            <h3 class="font-heading text-2xl text-gray-900">{{ experience.titre }}</h3>
+                            <p class="font-reading text-sm text-gray-600 leading-relaxed line-clamp-3">
+                                {{ experience.description_courte }}
+                            </p>
+                        </div>
 
-                    <!-- Image -->
-                    <div class="relative h-48 overflow-hidden">
-                        <img [src]="card.image" [alt]="card.title"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-600">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-user-tie text-primary-500"></i>
+                                {{ experience.client || 'Client confidentiel' }}
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-industry text-primary-500"></i>
+                                {{ experience.secteur || 'Secteur confidentiel' }}
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-calendar-day text-primary-500"></i>
+                                {{ experience.date_debut | date: 'MMM yyyy' }}
+                                @if (experience.en_cours) {
+                                <span class="ml-1 text-xs uppercase text-primary-600 font-semibold">
+                                    (En cours)
+                                </span>
+                                }
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-hourglass-half text-primary-500"></i>
+                                {{ experience.duree ? experience.duree + ' mois' : 'Durée confidentielle' }}
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Contenu -->
-                    <div class="p-8">
-                        <h3 class="font-heading text-lg font-bold text-gray-900 mb-4">
-                            {{ card.title }}
-                        </h3>
-                        <p class="font-reading text-sm text-gray-600 leading-relaxed">
-                            {{ card.description }}
-                        </p>
+                    <div class="px-6 pb-6">
+                        <button type="button" (click)="viewExperienceDetail(experience.slug)"
+                            class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gray-900 text-white px-5 py-3 font-semibold hover:bg-primary-600 transition-colors duration-200">
+                            Voir le détail
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
                     </div>
-                </div>
+                </article>
                 }
             </div>
+            }
+            }
         </div>
     </section>
-<!-- CTA GLOBAL -->
-<section class="max-w-6xl mx-auto px-4 py-14">
-    <div
-        class="rounded-2xl bg-primary text-neutral-900 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div>
-            <h2 class="text-xl md:text-2xl font-bold">Besoin d'un recrutement spécialisé ?</h2>
-            <p class="mt-1">Discutons de vos besoins en recrutement et trouvons ensemble les meilleurs talents.</p>
+
+
+    <!-- CTA GLOBAL -->
+    <section class="max-w-6xl mx-auto px-4 py-14">
+        <div
+            class="rounded-2xl bg-primary text-neutral-900 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+                <h2 class="text-xl md:text-2xl font-bold">Prêt à nous rejoindre dans cette aventure ?</h2>
+                <p class="mt-1">Discutons de vos besoins et trouvons ensemble les meilleurs solutions.</p>
+            </div>
+            <a routerLink="/contact"
+                class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-neutral-900 text-white hover:opacity-90 whitespace-nowrap">
+                Nous contacter <i class="fas fa-phone"></i>
+            </a>
         </div>
-        <a routerLink="/contact"
-            class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-neutral-900 text-white hover:opacity-90 whitespace-nowrap">
-            Nous contacter <i class="fas fa-phone"></i>
-        </a>
-    </div>
-</section>
+    </section>
 </div>

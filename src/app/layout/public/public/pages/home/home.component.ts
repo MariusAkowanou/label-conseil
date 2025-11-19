@@ -28,12 +28,12 @@ export class HomeComponent implements OnInit {
   heroData = {
     subtitle: "Votre expert du",
     mainTitle: "conseil et accompagnement",
-    description: "Label Conseils est un cabinet de conseil spécialisé dans l'accompagnement des entreprises et des professionnels vers l'excellence.",
-    secondaryDescription: "Depuis 2010, Label Conseils accompagne entreprises et candidats dans leur croissance et leur développement professionnel.",
+    description: "Label Conseils est un cabinet de conseil spécialisé dans l'accompagnement des entreprise et des professionnels vers l'excellence.",
+    secondaryDescription: "Depuis 2011, Label Conseils accompagne entreprises et candidats dans leur croissance et leur développement professionnel.",
     stats: {
       experience: "10+",
       clients: "500+",
-      expertises: "16"
+      expertises: "4"
     }
   };
 
@@ -43,22 +43,29 @@ export class HomeComponent implements OnInit {
       {
         id: "methodology",
         title: "Notre méthodologie",
-        subtitle: "L'approche directe",
-        description: "La précision est le maître-mot d'un conseil réussi. Pour plus de réactivité et d'efficacité, nous sollicitons uniquement les meilleurs experts pour chaque projet.",
+        subtitle: "Une approche structurée pour un impact durable",
+        description: "Chez LABEL CONSEILS, nous croyons que le succès d’une mission repose sur une méthodologie rigoureuse, adaptative et collaborative.Notre démarche est conçue pour garantir non seulement la livraison de résultats concrets, mais aussi le renforcement durable des capacités de nos clients.",
         color: "primary"
       },
       {
         id: "organisation",
         title: "Notre organisation",
-        subtitle: "L'hyperspécialisation",
-        description: "Nos expertises nous permettent de vous proposer un accompagnement sur-mesure par des spécialistes de vos métiers, pour répondre à tous vos enjeux.",
+        subtitle: "Une force collective au service de votre performance",
+        description: "LABEL CONSEILS s'appuie sur une organisation robuste et agile, conçue pour mobiliser rapidement l'expertise idoine autour de vos défis.Notre structure et notre culture font de nous un partenaire de confiance pour les projets les plus exigeants.",
         color: "gray"
       },
       {
         id: "profiles",
         title: "Les profils que nous accompagnons",
-        subtitle: "Des projets à fort enjeu",
-        description: "Nous accompagnons nos clients sur des projets essentiels à tout niveau de l'organisation, que vous soyez une entreprise du CAC 40, une PME/ETI ou une start-up Tech.",
+        subtitle: "Votre défi est unique, notre approche aussi.",
+        description: "LABEL CONSEILS est le partenaire privilégié des acteurs qui impulsent le développement et la transformation.Nous adaptons nos méthodes et notre accompagnement à la spécificité de chaque structure, de l'institution internationale à la collectivité locale.",
+        color: "gray"
+      },
+      {
+        id: "reseau",
+        title: "Notre Réseau & Partenariats",
+        subtitle: "Un réseau et des partenaires à votre service.",
+        description: "Pour répondre à des mandats complexes ou hautement spécialisés, LABEL CONSEILS peut s'appuyer sur un réseau étendu d'experts associés et de partenaires stratégiques nationaux et internationaux.Cette flexibilité nous permet d'enrichir nos équipes des compétences les plus pointues, sans compromis sur la qualité.",
         color: "gray"
       }
     ]
@@ -66,8 +73,8 @@ export class HomeComponent implements OnInit {
 
   expertiseData = {
     title: "Notre secret ? La maîtrise de vos métiers",
-    description: "Label Conseil se compose de 16 expertises : Carrière, Consulting , Digital ... jusqu'à 16 expertises.",
-    details: "Cette hyperspécialisation nous permet de maîtriser parfaitement votre environnement, de comprendre vos enjeux, d'appréhender les mutations de vos métiers et d'anticiper les innovations sectorielles. Nos consultants maîtrisent les codes et spécificités de vos marchés.",
+    description: "Parce que comprendre votre réalité terrain est la clé de votre performance.Chez LABEL CONSEILS, nous ne nous contentons pas de livrer des analyses théoriques.Nous plongeons au cœur de vos enjeux opérationnels, de vos contraintes spécifiques et de votre jargon métier pour co- construire des solutions qui ne sont pas seulement justes sur le papier, mais surtout efficaces sur le terrain.",
+    details: "Nous ne visons pas la livraison d'un simple rapport. Nous visons votre succès opérationnel.Cette philosophie nous pousse à être un partenaire engagé à vos côtés, qui partage vos objectifs et met son expertise au service de votre performance métier.",
     expertises: [
       "Carrière", "Consulting", "Digital", "Data & IA", "Executive", "Finance",
       "Freelance & Transition", "HR", "Investment", "Legal", "Operations & Engineering",

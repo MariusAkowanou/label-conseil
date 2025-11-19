@@ -30,6 +30,14 @@ export const routes: Routes = [
                 loadComponent: () => import('./layout/public/public/pages/experience/experience.component').then(m => m.ExperienceComponent)
             },
             {
+                path: 'accompagnements/experience/thematiques',
+                loadComponent: () => import('./layout/public/public/pages/experience-thematique/experience-thematique.component').then(m => m.ExperienceThematiqueComponent)
+            },
+            {
+                path: 'accompagnements/experience/:slug',
+                loadComponent: () => import('./layout/public/public/pages/experience-detail/experience-detail.component').then(m => m.ExperienceDetailComponent)
+            },
+            {
                 path: 'nous-rejoindre',
                 loadComponent: () => import('./layout/public/public/pages/join-us/join-us.component').then(m => m.JoinUsComponent)
             },

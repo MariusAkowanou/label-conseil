@@ -26,7 +26,7 @@ export class AboutComponent implements OnInit {
   heroData = {
     company: "LABEL CONSEILS",
     title: "Qui sommes-nous ?",
-    mainDescription: "LABEL CONSEILS est né pour répondre aux nouveaux besoins des organisations (grandes et petites entreprises, administrations et organismes du secteur public, Collectivités Territoriales, associations...) qui font face à des défis de plus en plus complexes, dans un contexte d'incertitude accrue.",
+    mainDescription: "Nous sommes un cabinet spécialisé dans la conception, la mise en œuvre et la gestion intégrée de projets de développement, alliant expertise technique, innovation et ancrage territorial.Notre mission est d’accompagner les institutions publiques, les organisations de développement, les ONG, les entreprises et les acteurs communautaires dans la réalisation de solutions durables, structurantes et adaptées aux réalités locales..",
     secondaryDescription: "Pour réfléchir, décider et agir efficacement, l'expertise pure ne suffit plus : il devient nécessaire de considérer les interrelations de plusieurs secteurs d'activités, de plusieurs fonctions, de plusieurs cultures."
   };
 

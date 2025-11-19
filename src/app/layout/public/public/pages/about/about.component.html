@@ -36,7 +36,7 @@
 
                     <!-- Icône LinkedIn -->
                     <div class="flex items-center">
-                        <a href="https://linkedin.com/company/label-conseil" target="_blank" rel="noopener noreferrer"
+                        <a href="https://linkedin.com/company/label-conseils" target="_blank" rel="noopener noreferrer"
                             class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition-all duration-300 shadow-medium hover:shadow-strong group">
                             <i
                                 class="fab fa-linkedin-in text-white text-lg group-hover:scale-110 transition-transform duration-300"></i>
@@ -48,10 +48,15 @@
                         <p class="font-reading text-base text-gray-700 leading-relaxed">
                             {{ heroData.mainDescription }}
                         </p>
-
-                        <p class="font-reading text-base text-gray-600 leading-relaxed">
-                            {{ heroData.secondaryDescription }}
-                        </p>
+                        <div>
+                            <h3 class="font-reading text-lg text-gray-700 leading-relaxed font-semibold ">Notre engagement est simple :</h3>
+                            <p class="font-reading text-base text-gray-700 leading-relaxed">
+                                Proposer des solutions réalistes, efficaces et durables, tout en garantissant une exécution
+                                professionnelle et une valeur ajoutée mesurable pour nos partenaires et clients.
+                            </p>
+                        </div>
+                        
+                    
                     </div>
                 </div>
             </div>
@@ -59,10 +64,9 @@
     </section>
 
 
-    <!-- Après la section hero, ajouter ces deux sections -->
 
     <!-- Section Pourquoi Label Conseil -->
-    <section class="py-20 lg:py-32 bg-white">
+    <section class="py-20 lg:py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     
             <!-- Titre centré -->
@@ -75,12 +79,26 @@
             <!-- Contenu -->
             <div class="space-y-8 animate-on-scroll animate-on-scroll-delay-200" data-section="why">
     
-                <!-- Introduction -->
-                <p class="font-reading text-lg text-gray-600 leading-relaxed">
-                    {{ whyData.introduction }}
-                </p>
-    
-                <!-- Singularité du cabinet -->
+                <h3 class="font-reading text-lg text-gray-700 leading-relaxed font-semibold mt-8">Notre cabinet s’appuie sur une équipe pluridisciplinaire et un réseau de consultants spécialisés dans :</h3>
+                <ul class="list-disc pl-8 space-y-2 text-gray-600">
+                    <li>L’agriculture et l’agro461-industrie ;</li>
+                    <li>Le développement local et l’aménagement du territoire ;</li>
+                    <li>Les études socio-économiques et environnementales ;</li>
+                    <li>L’ingénierie des données, l’analyse statistique et la data science ;</li>
+                    <li>La planification, la gestion et l’évaluation de projets ;</li>
+                    <li>La digitalisation des processus et la mise en place de systèmes d’information ;</li>
+                    <li>La formation et le renforcement des capacités.</li>
+                </ul>
+                
+                <h3 class="font-reading text-lg text-gray-700 leading-relaxed font-semibold mt-8">Nous mettons au cœur de notre approche :</h3>
+                <ul class="list-disc pl-8 space-y-2 text-gray-600">
+                    <li>La co-construction avec les parties prenantes ;</li>
+                    <li>L’excellence technique et méthodologique ;</li>
+                    <li>L’utilisation d’outils et technologies modernes ;</li>
+                    <li>La durabilité économique, sociale et environnementale ;</li>
+                    <li>La transparence, la qualité et la redevabilité.</li>
+                </ul>
+                <!-- Singularité du cabinet --
                 <div class="space-y-4">
                     <p class="font-reading text-lg text-gray-700 leading-relaxed font-semibold">
                         {{ whyData.singularityTitle }}
@@ -99,7 +117,7 @@
                         </div>
                         }
                     </div>
-                </div>
+                </div>-->
     
                 <!-- Note sur le réseau -->
                 <p class="font-reading text-gray-700 leading-relaxed italic">

@@ -19,7 +19,7 @@ export class ExpertiseComponent implements OnInit, AfterViewInit {
   private seo = inject(SeoService);
   private platformId = inject(PLATFORM_ID);
 
-  expertise = signal<Expertise | null>(null);
+  expertise = signal<any | null>(null);
   isLoading = signal(true);
   notFound = signal(false);
 
@@ -47,10 +47,10 @@ export class ExpertiseComponent implements OnInit, AfterViewInit {
     this.isLoading.set(true);
     this.notFound.set(false);
 
-    this.http.get<ExpertiseConfig>('/assets/config/expertises.config.json')
+    this.http.get<any>('/assets/config/expertises.config.json')
       .subscribe({
         next: (config) => {
-          const expertiseData = config.expertises.find(e => e.slug === slug);
+          const expertiseData = config.expertises.find((e:any) => e.slug === slug);
 
           if (expertiseData) {
             this.expertise.set(expertiseData);

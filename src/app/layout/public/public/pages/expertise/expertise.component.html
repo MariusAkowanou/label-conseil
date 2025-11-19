@@ -81,79 +81,38 @@
             </div>
         </section>
 
-        <!-- Section Marché -->
-        <section class="py-20 lg:py-32 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-                <div class="text-center mb-16 animate-on-scroll" data-section="market">
-                    <h2 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-                        {{ expertise()!.marketContext.title }}
-                    </h2>
+        <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+            <p class="font-reading text-lg md:text-2xl text-gray-700 leading-relaxed font-semibold">
+                Nos domaines d’intervention
+            </p>
+            <div class="space-y-6 ml-4">
+                @for (point of expertise()!.points; track point.title) {
+                <div class="flex items-start space-x-4">
+                    <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
+                    <div>
+                        <span class="font-body font-semibold text-primary-600">{{ point.title }} :</span>
+                        <span class="font-reading text-gray-700 ml-1">
+                            {{ point.description }}
+                        </span>
+                    </div>
                 </div>
-
-                <div class="animate-on-scroll animate-on-scroll-delay-200" data-section="market">
-                    <p class="font-reading text-lg text-gray-700 leading-relaxed text-center">
-                        {{ expertise()!.marketContext.content }}
-                    </p>
-                </div>
+                }
             </div>
         </section>
 
-        <!-- Section Recrutement -->
-        <section class="py-20 lg:py-32 bg-gray-50">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="text-center mb-16 animate-on-scroll" data-section="recruitment">
-                    <h2 class="font-heading text-3xl lg:text-5xl font-bold text-gray-900">
-                        {{ expertise()!.recruitment.title }}
-                    </h2>
+        <!-- CTA GLOBAL -->
+        <section class="max-w-6xl mx-auto px-4 py-14">
+            <div
+                class="rounded-2xl bg-primary text-neutral-900 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold">Prêt à nous rejoindre dans cette aventure ?</h2>
+                    <p class="mt-1">Discutons de vos besoins et trouvons ensemble les meilleurs solutions.</p>
                 </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 justify-center">
-                    @for (category of expertise()!.recruitment.categories; track category.title; let i = $index) {
-                    <div class="space-y-6 animate-on-scroll" [class]="'animate-on-scroll-delay-' + ((i + 1) * 100)"
-                        data-section="recruitment">
-
-                        <h3 class="font-heading text-xl font-bold text-gray-900 mb-6">
-                            {{ category.title }}
-                        </h3>
-
-                        <div class="space-y-3">
-                            @for (position of category.positions; track position) {
-                            <div class="flex items-start space-x-3">
-                                <div class="w-2 h-2 bg-primary-500 rounded-full mt-3 flex-shrink-0"></div>
-                                <span class="font-reading text-gray-700">{{ position }}</span>
-                            </div>
-                            }
-                        </div>
-                    </div>
-                    }
-                </div>
-            </div>
-        </section>
-
-        <!-- Call-to-Action -->
-        <section class="py-20 bg-gray-600 mb-5">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="space-y-8 animate-on-scroll" data-section="cta">
-
-                    <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white">
-                        Intéressé par {{ expertise()!.name }} ?
-                    </h2>
-
-                    <p class="font-reading text-xl text-primary-100 max-w-2xl mx-auto">
-                        Prenons contact pour discuter de vos projets de recrutement dans ce domaine d'expertise.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a routerLink="/contact"
-                            class="font-heading inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-xl hover:bg-gray-50 transition-all duration-300 shadow-medium hover:shadow-strong">
-                            Nous contacter
-                        </a>
-
-                        
-                    </div>
-                </div>
+                <a routerLink="/contact"
+                    class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-neutral-900 text-white hover:opacity-90 whitespace-nowrap">
+                    Nous contacter <i class="fas fa-phone"></i>
+                </a>
             </div>
         </section>
     </div>

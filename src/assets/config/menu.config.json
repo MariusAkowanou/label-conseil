@@ -18,7 +18,7 @@
     },
     {
       "label": "Nos expériences",
-      "route": "/accompagnements/experience",
+      "route": "/accompagnements/experience/thematiques",
       "type": "link"
     },
     {

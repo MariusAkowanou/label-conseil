@@ -1,0 +1,140 @@
+<div class="experience-detail-page bg-white">
+    <section class="bg-gray-900 text-white py-16 lg:py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <button type="button"
+                class="inline-flex items-center gap-2 text-sm text-primary-100 hover:text-white transition-colors"
+                (click)="backToExperiences()">
+                <i class="fas fa-arrow-left"></i>
+                Retour aux expériences
+            </button>
+
+            @if (isLoading()) {
+            <div class="flex items-center gap-3 text-primary-100">
+                <span class="h-3 w-3 rounded-full bg-primary-200 animate-ping"></span>
+                Chargement de l'expérience...
+            </div>
+            } @else if (errorMessage()) {
+            <p class="text-red-200">{{ errorMessage() }}</p>
+            } @else if (experience()) {
+            <div class="space-y-5">
+                <p class="text-sm uppercase tracking-[0.3em] text-primary-200">
+                    {{ experience()?.thematique }} • {{ experience()?.type_experience }}
+                </p>
+                <h1 class="font-heading text-4xl lg:text-5xl font-bold">
+                    {{ experience()?.titre }}
+                </h1>
+                <p class="text-lg text-gray-200 max-w-3xl">
+                    {{ experience()?.description_courte }}
+                </p>
+                <div class="flex flex-wrap gap-4 text-sm text-gray-300">
+                    <span class="inline-flex items-center gap-2">
+                        <i class="fas fa-user-tie"></i>
+                        {{ experience()?.client || 'Client confidentiel' }}
+                    </span>
+                    <span class="inline-flex items-center gap-2">
+                        <i class="fas fa-industry"></i>
+                        {{ experience()?.secteur || 'Secteur confidentiel' }}
+                    </span>
+                    <span class="inline-flex items-center gap-2">
+                        <i class="fas fa-calendar-day"></i>
+                        {{ experience()?.date_debut | date: 'MMM yyyy' }} -
+                        {{ experience()?.en_cours ? 'Aujourd\'hui' : (experience()?.date_fin | date: 'MMM yyyy') }}
+                    </span>
+                    <span class="inline-flex items-center gap-2">
+                        <i class="fas fa-hourglass-half"></i>
+                        {{ experience()?.duree ? experience()?.duree + ' mois' : 'Durée non communiquée' }}
+                    </span>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+
+    <section class="py-16 lg:py-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+            @if (errorMessage() && !isLoading()) {
+            <div class="rounded-2xl bg-red-50 border border-red-200 p-6 text-red-700">
+                {{ errorMessage() }}
+            </div>
+            }
+
+            @if (!errorMessage() && !isLoading() && experience()) {
+            <div class="rounded-3xl border border-gray-100 bg-white shadow-soft overflow-hidden">
+                <img [src]="experience()?.image_url || '/assets/images/hero.png'" [alt]="experience()?.titre"
+                    class="w-full h-[360px] object-cover">
+                <div class="p-8 space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <p class="text-gray-500 text-sm uppercase tracking-wide mb-1">Client</p>
+                            <p class="font-heading text-lg text-gray-900">{{ experience()?.client || 'Confidentiel' }}
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm uppercase tracking-wide mb-1">Secteur</p>
+                            <p class="font-heading text-lg text-gray-900">{{ experience()?.secteur || 'Confidentiel' }}
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm uppercase tracking-wide mb-1">Compétences mobilisées</p>
+                            <p class="font-heading text-lg text-gray-900">{{ experience()?.nombre_competences }}</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h2 class="font-heading text-2xl text-gray-900">Contexte & objectifs</h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            {{ experience()?.description_courte }}
+                        </p>
+                        @if (experience()?.objectifs?.length) {
+                        <ul class="space-y-2 text-gray-700">
+                            @for (objectif of experience()?.objectifs; track objectif) {
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-check text-primary-500 mt-1"></i>
+                                <span>{{ objectif }}</span>
+                            </li>
+                            }
+                        </ul>
+                        }
+                    </div>
+
+                    @if (experience()?.resultats?.length) {
+                    <div class="space-y-4">
+                        <h2 class="font-heading text-2xl text-gray-900">Résultats obtenus</h2>
+                        <ul class="space-y-2 text-gray-700">
+                            @for (resultat of experience()?.resultats; track resultat) {
+                            <li class="flex items-start gap-3">
+                                <i class="fas fa-star text-amber-500 mt-1"></i>
+                                <span>{{ resultat }}</span>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+                    }
+
+                    @if (experience()?.temoignages?.length) {
+                    <div class="space-y-6">
+                        <h2 class="font-heading text-2xl text-gray-900">Ils témoignent</h2>
+                        <div class="space-y-6">
+                            @for (temoignage of experience()?.temoignages; track temoignage.auteur) {
+                            <blockquote class="rounded-2xl border border-gray-100 bg-gray-50 p-6 space-y-3">
+                                <p class="text-gray-600 italic leading-relaxed">“{{ temoignage.citation }}”</p>
+                                <p class="text-sm font-semibold text-gray-900">
+                                    {{ temoignage.auteur }}
+                                    @if (temoignage.fonction) {
+                                    <span class="text-gray-500 font-normal">
+                                        — {{ temoignage.fonction }}
+                                    </span>
+                                    }
+                                </p>
+                            </blockquote>
+                            }
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+</div>

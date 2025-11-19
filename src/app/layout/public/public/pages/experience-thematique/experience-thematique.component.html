@@ -1,0 +1,80 @@
+<div class="thematique-page bg-white">
+    <!-- Hero -->
+    <section class="py-16 lg:py-24 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-10 lg:grid-cols-2 items-center">
+            <div class="space-y-6">
+                <p class="font-body text-sm font-semibold text-primary-600 uppercase tracking-wider">
+                    Nos thématiques
+                </p>
+                <h1 class="font-heading text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                    Des expertises sectorielles pour chaque mission
+                </h1>
+                <p class="font-reading text-base text-gray-600 leading-relaxed">
+                    Chaque thématique est le reflet d'expériences tangibles réalisées auprès de nos clients. Explorez
+                    nos domaines
+                    d'intervention pour mieux comprendre comment nous accompagnons vos enjeux.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a routerLink="/accompagnements/experience"
+                        class="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-6 py-3 text-white font-semibold hover:bg-primary-600 transition-colors duration-200">
+                        Voir toutes les expériences
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="relative rounded-3xl overflow-hidden shadow-strong min-h-[320px] bg-cover bg-center"
+                style="background-image: url('/assets/images/hero.png');">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/10"></div>
+                <div class="relative z-10 h-full flex flex-col justify-end p-8 text-white space-y-2">
+                    <p class="text-sm uppercase tracking-widest text-primary-100">Label Conseils</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liste des thématiques -->
+    <section class="py-16 lg:py-24">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+            @if (errorMessage()) {
+            <div class="rounded-2xl border border-red-100 bg-red-50 p-6 text-red-700">
+                {{ errorMessage() }}
+            </div>
+            }
+
+            @if (isLoading()) {
+            <div class="flex justify-center py-16">
+                <div class="flex items-center gap-3 text-gray-500">
+                    <span class="h-3 w-3 animate-ping rounded-full bg-primary-500"></span>
+                    Chargement des thématiques...
+                </div>
+            </div>
+            } @else {
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                @for (thematique of thematiques(); track thematique.id) {
+                <article
+                    class="p-8 rounded-3xl border border-gray-100 bg-white shadow-soft hover:shadow-medium transition-shadow duration-200 cursor-pointer group"
+                    (click)="openThematique(thematique)">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center text-xl">
+                            <i [class]="thematique.icone"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-gray-500">{{ thematique.nombre_experiences }}
+                            expériences</span>
+                    </div>
+                    <h2
+                        class="font-heading text-2xl text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-200">
+                        {{ thematique.nom }}
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        {{ thematique.description }}
+                    </p>
+                </article>
+                }
+            </div>
+            }
+        </div>
+    </section>
+</div>
