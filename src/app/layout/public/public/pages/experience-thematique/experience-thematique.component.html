@@ -51,7 +51,7 @@
                 </div>
             </div>
             } @else {
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 gap-8">
                 @for (thematique of thematiques(); track thematique.id) {
                 <article
                     class="p-8 rounded-3xl border border-gray-100 bg-white shadow-soft hover:shadow-medium transition-shadow duration-200 cursor-pointer group"
@@ -65,7 +65,7 @@
                             expériences</span>
                     </div>
                     <h2
-                        class="font-heading text-2xl text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-200">
+                        class="font-heading text-xl text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-200">
                         {{ thematique.nom }}
                     </h2>
 
