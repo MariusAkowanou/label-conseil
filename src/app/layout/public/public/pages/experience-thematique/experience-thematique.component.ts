@@ -1,7 +1,7 @@
 import { Component, DestroyRef, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { ExperienceService, ExperienceThematique } from '../../../../../shared/services/api/experience.service';
+import { ExperienceService } from '../../../../../shared/services/api/experience.service';
 import { SeoService } from '../../../../../shared/services/local/seo.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 

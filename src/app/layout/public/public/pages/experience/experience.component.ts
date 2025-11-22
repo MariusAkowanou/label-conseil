@@ -2,7 +2,7 @@ import { Component, OnInit, inject, signal, PLATFORM_ID, DestroyRef } from '@ang
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { SeoService } from '../../../../../shared/services/local/seo.service';
-import { ExperienceService, ExperienceSummary } from '../../../../../shared/services/api/experience.service';
+import { ExperienceService } from '../../../../../shared/services/api/experience.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -108,8 +108,8 @@ export class ExperienceComponent implements OnInit {
     commitment: "Pour aider les candidats à révéler tout leur potentiel, nous cultivons avec eux une relation de proximité basée sur notre compréhension de leur métier et un accompagnement quotidien. En cas d'opportunité en adéquation avec votre profil, nous vous aidons à réussir les process et suivons votre prise de poste même après la période d'intégration."
   };
 
-  experiences = signal<ExperienceSummary[]>([]);
-  experienceTypes = signal<string[]>([]);
+  thematique = signal<any>(null);
+  missions = signal<any[]>([]);
   isLoadingExperiences = signal<boolean>(false);
   experiencesError = signal<string | null>(null);
   selectedThematique = signal<string | null>(null);
@@ -135,9 +135,9 @@ export class ExperienceComponent implements OnInit {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe(params => {
         const thematique = params.get('thematique');
-        const type = params.get('type');
+
         this.selectedThematique.set(thematique);
-        this.selectedType.set(type ?? 'all');
+
         this.fetchExperiences();
       });
   }
@@ -174,22 +174,24 @@ export class ExperienceComponent implements OnInit {
     });
   }
 
-  viewExperienceDetail(slug: string) {
-    this.router.navigate(['/accompagnements/experience', slug]);
-  }
 
   private fetchExperiences() {
     this.isLoadingExperiences.set(true);
     this.experiencesError.set(null);
 
-    this.experienceService.getExperiences({
-      thematique: this.selectedThematique(),
-      type: this.selectedType(),
-    }).pipe(takeUntilDestroyed(this.destroyRef))
+    const thematiqueSlug = this.selectedThematique();
+    if (!thematiqueSlug) {
+      this.missions.set([]);
+      this.thematique.set(null);
+      this.isLoadingExperiences.set(false);
+      return;
+    }
+
+    this.experienceService.getExperiences(thematiqueSlug).pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
-        next: (data:any) => {
-          this.experiences.set(data.results);
-          this.experienceTypes.set(this.extractExperienceTypes(data.results));
+        next: (data: any) => {
+          this.thematique.set(data);
+          this.missions.set(data.missions || []);
           this.isLoadingExperiences.set(false);
         },
         error: (error) => {
@@ -198,16 +200,6 @@ export class ExperienceComponent implements OnInit {
           this.isLoadingExperiences.set(false);
         }
       });
-  }
-
-  private extractExperienceTypes(experiences: ExperienceSummary[]): string[] {
-    const uniqueTypes = new Set<string>();
-    experiences.forEach(exp => {
-      if (exp.type_experience) {
-        uniqueTypes.add(exp.type_experience);
-      }
-    });
-    return Array.from(uniqueTypes);
   }
 
   private setupScrollAnimations() {

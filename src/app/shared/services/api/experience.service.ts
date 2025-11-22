@@ -3,16 +3,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 
-export interface ExperienceThematique {
-  id: number;
-  nom: string;
-  slug: string;
-  description: string;
-  icone: string;
-  ordre: number;
-  nombre_experiences: number;
-}
-
 export interface ExperienceSummary {
   id: number;
   titre: string;
@@ -68,21 +58,8 @@ export class ExperienceService {
    * Récupère la liste des expériences avec filtres optionnels
    */
   getExperiences(filters: any): Observable<any> {
-    let params = new HttpParams();
 
-    if (filters.thematique) {
-      params = params.set('thematique', filters.thematique);
-    }
-
-    if (filters.type && filters.type !== 'all') {
-      params = params.set('type', filters.type);
-    }
-
-    if (filters.featured !== undefined) {
-      params = params.set('featured', filters.featured ? 'true' : 'false');
-    }
-
-    return this.http.get<any>(`${this.apiBase}/experiences/`, { params });
+    return this.http.get<any>(`${this.apiBase}/thematiques/${filters}`,);
   }
 
   /**
