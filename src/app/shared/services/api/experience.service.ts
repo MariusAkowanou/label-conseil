@@ -51,7 +51,7 @@ export class ExperienceService {
    * Récupère la liste des thématiques disponibles
    */
   getThematiques(): Observable<any> {
-    return this.http.get<any>(`${this.apiBase}/thematiques/`);
+    return this.http.get<any>(`${this.apiBase}/experience/thematiques/`);
   }
 
   /**
@@ -59,7 +59,7 @@ export class ExperienceService {
    */
   getExperiences(filters: any): Observable<any> {
 
-    return this.http.get<any>(`${this.apiBase}/thematiques/${filters}`,);
+    return this.http.get<any>(`${this.apiBase}/experience/thematiques/${filters}`,);
   }
 
   /**
