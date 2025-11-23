@@ -33,7 +33,7 @@
                                 Grâce à ses {{ heroData.stats.expertises }} expertises et un réseau de plus de
                                 <span class="text-primary-600 font-semibold">plusieurs
                                     clients</span>,
-                                Label Conseils vous accompagne vers l'excellence.
+                                LABEL CONSEILS vous accompagne vers l'excellence.
                             </p>
 
                         </div>
@@ -153,7 +153,7 @@
                 <h2 class="section-title text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
                     {{ ctaData.title }}
                 </h2>
-                <p class=" ">Parlons de votre contexte et de vos objectifs spécifique lors d'un premier échange</p>
+                <p class=" uppercase">Parlons de votre contexte et de vos objectifs spécifique lors d'un premier échange </p>
 
                 <div class="grid grid-cols-1 gap-6 lg:gap-10">
                     @for (option of ctaData.options; track option.title; let i = $index) {
@@ -173,7 +173,7 @@
                             [class.hover:text-primary-600]="option.type === 'outline'">
                             <i
                                 class="fas fa-chevron-right mr-2 text-xs transform group-hover:translate-x-1 transition-transform duration-300"></i>
-                            {{ option.buttonText }}
+                            PRENDRE RENDEZ-VOUS
                             <i
                                 class="fas fa-chevron-left ml-2 text-xs transform group-hover:-translate-x-1 transition-transform duration-300"></i>
                         </a>
