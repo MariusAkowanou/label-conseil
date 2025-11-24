@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "Label Conseils",
+    "name": "LABEL CONSEILS",
     "logo": "/assets/images/logo/LabelConseils.jpg",
     "route": "/"
   },
@@ -17,7 +17,7 @@
       
     },
     {
-      "label": "Nos expériences",
+      "label": "Nos réalisations",
       "route": "/accompagnements/experience/thematiques",
       "type": "link"
     },
