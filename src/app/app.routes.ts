@@ -48,6 +48,25 @@ export const routes: Routes = [
             {
                 path: 'formulaire-de-candidature/:id',
                 loadComponent: () => import('./layout/public/public/pages/job-detail/components/job-modal/job-modal.component').then(m => m.JobModalComponent)
+            },
+            {
+                path: 'mentions-legales',
+                loadComponent: () => import('./layout/public/public/pages/mention-legal/mention-legal.component').then(m => m.MentionLegalComponent)
+            },
+
+            {
+                path: 'politique-confidentialite',
+                loadComponent: () => import('./layout/public/public/pages/politique-confidentialite/politique-confidentialite.component').then(m => m.PolitiqueConfidentialiteComponent)
+            },
+
+            {
+                path: 'conditions-utilisation',
+                loadComponent: () => import('./layout/public/public/pages/condition-general/condition-general.component').then(m => m.ConditionGeneralComponent)
+            },
+
+            {
+                path:'**',
+                redirectTo:'/'
             }
         ]
     }
