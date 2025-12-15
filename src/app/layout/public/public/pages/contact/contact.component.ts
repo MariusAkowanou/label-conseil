@@ -26,33 +26,9 @@ export class ContactComponent implements OnInit {
   careerForm!: FormGroup;
 
   // Données des expertises Label Conseil
-  expertises = [
-    'Carrière',
-    'Consulting',
-    'Digital',
-    'Stratégies de territoires',
-    'Services économiques et financiers',
-    'Gestion de la productivité humaine',
-    'Conseils juridique',
-    'Expertise rurale',
-    'Études sectorielles',
-    'Expertise sociale',
-    'Stratégies d\'entreprise',
-    'Service marketing',
-    'Assistance en gestion',
-    'Gestion et développement des coopératives',
-    'Conseils en fiscalité',
-    'Gestion de l\'information et des systèmes',
-    'Gestion des opérations et de la production'
-  ];
 
   contactReasons = [
-    'Je souhaite être accompagné(e) dans ma transition professionnelle',
-    'Je cherche un coach pour un manager ou dirigeant de mon entreprise',
-    'Je souhaite en savoir plus sur l\'accompagnement individuel',
-    'Je cherche une solution d\'accompagnement collectif',
     'Je souhaite un RDV découverte pour mieux comprendre l\'offre Label Conseils',
-    'Autre (précisez ci-dessous)'
   ];
 
   ngOnInit() {

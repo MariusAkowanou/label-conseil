@@ -62,8 +62,8 @@ export class AboutComponent implements OnInit {
         description: "fondée sur une maîtrise des techniques de conseils, une expertise dans la résolution de problèmes complexes transdisciplinaires, et un réel investissement en R&D (stratégie, management, design thinking, innovation collaborative...), en lien avec le monde académique"
       },
       {
-        title: "Cabinet de conseils indépendant",
-        description: "sans conflit d'intérêt : un allié qui, au-delà des recommandations, s'implique à vos côtés jusqu'à la réussite de vos ambitions"
+        title: "Approche participative",
+        description: "un allié qui, au-delà des recommandations, s'implique à vos côtés jusqu'à la réussite de vos ambitions"
       },
       {
         title: "Application systématique de la qualité totale",
